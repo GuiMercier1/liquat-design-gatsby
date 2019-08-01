@@ -20,9 +20,6 @@ const IndexPage = () => (
       <Image />
     </div>
     <Link to="/guillaume-mercier/">Go to Guillaume Mercier</Link>
-    <Link to="/guillaume-mercier/portfolio/">Go to page Portfolio</Link>
-    <Link to="/guillaume-mercier/portfolio/article-1">Go to page Article1</Link>
-    <Link to="/guillaume-mercier/contact/">Go to page Contact</Link>
   </Layout>
 )
 

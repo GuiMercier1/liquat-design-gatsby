@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Liquat Design`,
-    description: `"Liquat Design - UX Design, Web Development, Management. La Réunion, France.`,
+    description: `"Liquat Design - UX Design, Web Development, Management. Alice Foissy et Guillaume Mercier. La Réunion, France.`,
     author: `Guillaume Mercier`,
   },
   plugins: [

@@ -1,6 +1,9 @@
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 import PropTypes from "prop-types"
 import React from "react"
+
+import 'material-icons/iconfont/material-icons.css'
 
 function Footer(props) {
 
@@ -24,39 +27,65 @@ function Footer(props) {
     text: "Expériences plus ou moins réussies"
   }
 
+  const data = useStaticQuery(graphql`
+    query {
+      linkedinImage: file(relativePath: { eq: "logos/icon_linkedin.png" }) {
+        childImageSharp {
+          fixed(width:24) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      },
+      twitterImage: file(relativePath: { eq: "logos/icon_twitter.png" }) {
+        childImageSharp {
+          fixed(width:24) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      },
+      githubImage: file(relativePath: { eq: "logos/icon_github.png" }) {
+        childImageSharp {
+          fixed(width:24) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      },
+    }
+  `)
+
   return (
     <footer className="page-footer">
       <div className="container">
         <div className="row">
           <div className="col s12 m6">
-            <h4 className="white-text" data-translate="FOOTER_CONTACT"></h4>
-            <p className="grey-text text-lighten-4">
-              <Link to={contact.link} className="grey-text text-lighten-3 custom-link"><i
+            <h4 className="white-text">Contactez-moi !</h4>
+            <div className="footer-link-wrapper">
+              <Link to={contact.link} className="grey-text text-lighten-3"><i
                 className="material-icons left">mail_outline</i>{contact.text}</Link>
-            </p>
-            <p className="grey-text text-lighten-4">
-              <a className="grey-text text-lighten-3" href={linkedin.link} target="_blank">
-                <img className="link-icon" src="img/icon_linkedin.png" alt="Logo LinkedIn" />
+            </div>
+            <div className="footer-link-wrapper">
+              <a className="grey-text text-lighten-3" href={linkedin.link} target="_blank" rel="noopener noreferrer">
+                <Img className="link-icon" fixed={data.linkedinImage.childImageSharp.fixed} alt="Logo LinkedIn"/>
                 <span>{linkedin.text}</span>
               </a>
-            </p>
-            <p className="grey-text text-lighten-4">
-              <a className="grey-text text-lighten-3" href={twitter.link} target="_blank">
-                <img className="link-icon" src="img/icon_twitter.png" alt="Logo Twitter" />
+            </div>
+            <div className="footer-link-wrapper">
+              <a className="grey-text text-lighten-3" href={twitter.link} target="_blank" rel="noopener noreferrer">
+                <Img className="link-icon" fixed={data.twitterImage.childImageSharp.fixed} alt="Logo Twitter"/>
                 <span >{twitter.text}</span>
               </a>
-            </p>
-            <p className="grey-text text-lighten-4">
-              <a className="grey-text text-lighten-3" href={github.link} target="_blank">
-                <img className="link-icon" src="img/icon_github.png" alt="Logo GitHub" />
+            </div>
+            <div className="footer-link-wrapper">
+              <a className="grey-text text-lighten-3" href={github.link} target="_blank" rel="noopener noreferrer">
+                <Img className="link-icon" fixed={data.githubImage.childImageSharp.fixed} alt="Logo GitHub"/>
                 <span>{github.text}</span>
               </a>
-            </p>
+            </div>
           </div>
           <div className="col s12 m4">
             <h4 className="white-text">Votre avis m'intéresse</h4>
             <p className="grey-text text-lighten-4 spaced-text">
-              Si vous êtes ici, ce site devrait être conçu pour répondre à vos attentes. Satisfait ou pas, je serais heureux d'avoir votre retour, n'hésitez pas à m'envoyer <a className="orange-link" href={contact.link} target="_blank">un mail</a>.
+              Si vous êtes ici, ce site devrait être conçu pour répondre à vos attentes. Satisfait ou pas, je serais heureux d'avoir votre retour, n'hésitez pas à m'envoyer <a className="orange-link" href={contact.link} target="_blank" rel="noopener noreferrer">un mail</a>.
             </p>
           </div>
         </div>
