@@ -3,22 +3,37 @@ import styled from "styled-components"
 
 function Topic(props) {
 
+    const ImageWrapper = styled.div`
+    max-width: 20%!important;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+`
+
+    const TopicLinkContainer = styled.div`
+        border-top: none!important;
+        padding:0!important;
+        display: flex;
+        flex-wrap: wrap;
+    `
+
+    const TopicLink = styled.a`
+        padding:20px;
+    `
+
+    const TopicTitle = styled.h5`
+        margin-top: 0px;
+    `
+
     const links = props.topic.links.map((link, index) => {
-        const key = "topic_link_" + index + Date.now();
+        const key = props.key + link;
         return (
-            <a key={key} href={link.url} target="_blank" rel="noopener noreferrer">{link.title}</a>
+            <TopicLink key={key} href={link.url} target="_blank" rel="noopener noreferrer">{link.title}</TopicLink>
         );
     });
 
-    const ImageWrapper = styled.div`
-        max-width: 20%!important;
-        display: flex;
-        align-items: center;
-        padding: 10px;
-    `
-
     const img = <ImageWrapper className="card-image hide-on-small-only">
-        <img src={props.topic.imgSrc}></img>
+        <img src={props.topic.imgSrc} alt={props.topic.imgAlt}></img>
     </ImageWrapper>;
 
     const before = props.side === "left" ? img : null;
@@ -29,12 +44,12 @@ function Topic(props) {
             {before}
             <div className="card-stacked">
                 <div className="card-content">
-                    <h5 className="topic-title">{props.topic.title}</h5>
+                    <TopicTitle>{props.topic.title}</TopicTitle>
                     <p>{props.topic.text}</p>
                 </div>
-                <div className="card-action topic-link-container">
+                <TopicLinkContainer className="card-action">
                     {links}
-                </div>
+                </TopicLinkContainer>
             </div>
             {after}
         </div>

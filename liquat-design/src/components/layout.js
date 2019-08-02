@@ -11,6 +11,9 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
+
+import "materialize-css/dist/css/materialize.min.css"
+import "materialize-css/dist/js/materialize.min.js"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -27,7 +30,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
+      <main className="page-content">{children}</main>
       <Footer />
     </>
   )

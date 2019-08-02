@@ -12,7 +12,6 @@ class Header extends React.Component {
   }
 
   sidenavClickHandler() {
-    console.log(this.sidenav);
     this.sidenav.open();
   }
 
@@ -31,7 +30,7 @@ class Header extends React.Component {
 
     const experiences = {
       title: "Expériences",
-      link: "/guillaume-mercier/curriculum"
+      link: "/guillaume-mercier/experiences"
     }
 
     const topics = {
@@ -43,6 +42,11 @@ class Header extends React.Component {
       title: "Contact",
       link: "/guillaume-mercier/contact",
       mail: "gui.mercier1@gmail.com"
+    }
+
+    const liquat = {
+      title: "Liquat Design",
+      link: "/"
     }
 
     return (
@@ -59,6 +63,7 @@ class Header extends React.Component {
                 <li><Link to={experiences.link} className="menu-link">{experiences.title}</Link></li>
                 <li><Link to={topics.link} className="menu-link">{topics.title}</Link></li>
                 <li><Link to={contact.link} className="menu-link">{contact.title}</Link></li>
+                <li><Link to={liquat.link} className="menu-link">{liquat.title}</Link></li>
                 {/*<li><a href="#" classN ame="lang-switch-button" data-translate="LANG_SWITCH"></a></li>*/}
               </ul>
             </div>
@@ -83,6 +88,9 @@ class Header extends React.Component {
           </li>
           <li>
             <Link to={contact.link} className="sidenav-close menu-link">{contact.title}</Link>
+          </li>
+          <li>
+            <Link to={liquat.link} className="sidenav-close menu-link">{liquat.title}</Link>
           </li>
           {/*<li><a href="#" className="sidenav-close lang-switch-button" data-translate="LANG_SWITCH"></a></li>*/}
           <li className="navbar-footer">
