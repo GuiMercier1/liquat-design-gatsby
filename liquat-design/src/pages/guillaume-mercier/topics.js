@@ -1,20 +1,37 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../../components/layout"
 import Topic from "../../components/topic"
 import SEO from "../../components/seo"
 
-import exImage from "../../images/topics/ex.jpg"
-import ikigaiImage from "../../images/topics/ikigai.jpeg"
-import persuasiveImage from "../../images/topics/persuasive.png"
-import timeWellSpentImage from "../../images/topics/time_well_spent.png"
-import uxImage from "../../images/topics/ux-design.jpg"
+const getTopicsImages = () => {
+  const { allFile } = useStaticQuery(
+    graphql`
+      query TopicsQuery {
+        allFile(filter: {relativePath: {regex: "/(topics\/)/"}}) {
+          edges {
+            node {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+              base
+            }
+          }
+        }
+      }`
+  );
+
+  return { allFile };
+};
 
 function Topics() {
 
   const topicsData = [
     {
-      imgSrc: uxImage,
+      imgSrc: "ux-design.jpg",
       imgAlt: "Crédits à interaction-design.org",
       title: "UX Design - Introduction",
       text: "L'UX (ou User eXperience) est un procédé de conception de produits où l'on donne aux utilisateurs finaux une place centrale. On les étudie, on modélise leur personnalité et leurs besoins pour créer une expérience optimale avec le produit. De la définition du projet aux tests finaux en passant par la conception, l'UX Designer impliquera les utilisateurs pour que le produit final réponde à toutes leurs attentes.",
@@ -35,7 +52,7 @@ function Topics() {
       key: "topic_ux"
     },
     {
-      imgSrc: exImage,
+      imgSrc: "ex.jpg",
       imgAlt: "Expérience Employé - Crédits à hrreporter.com",
       title: "eXpérience Employé (EX)",
       text: "Ma propre définition de l'expérience employé (EX), c'est d'appliquer les processus de l'UX aux employés d'une entreprise. En tant que principaux acteurs de celle-ci, ils doivent être écoutés et pris en compte dans la plupart des décisions de l'entreprise. En utilisant les techniques et ateliers de l'UX, on peut donc définir leurs valeurs et leurs attentes pour créer une vraie symbiose avec les besoins économiques et stratégiques de l'entreprise. Travailler sur l'EX aura un grand impact sur le bien-être et donc l'implication de vos employés.",
@@ -52,7 +69,7 @@ function Topics() {
       key: "topic_ex"
     },
     {
-      imgSrc: ikigaiImage,
+      imgSrc: "ikigai.jpeg",
       imgAlt: "Ikigaï - Crédits à lesnouveauxtravailleurs.fr",
       title: "Ikigaï",
       text: "Droit venu du Japon, l'Ikigaï propose une vision très concrète du job \"idéal\" en le plaçant à la jonction de quatre domaines : ce que j'aime faire, ce dans quoi je suis doué, ce pour quoi je peux être payé et ce dont le monde a besoin. Loin d'apporter une solution évidente, il permet de soulever des questions primordiales au développement personnel et professionnel. Attention, ces lectures sont à prendre avec du recul pour ne pas sombrer dans une contre-productive course à la perfection !",
@@ -69,7 +86,7 @@ function Topics() {
       key: "topic_ikigai"
     },
     {
-      imgSrc: persuasiveImage,
+      imgSrc: "persuasive.png",
       imgAlt: "Conception persuasive - Crédits à behaviormodel.org",
       title: "Application persuasives",
       text: "En jouant sur les biais cognitifs et en suivant certaines théories de design (comme celles de BJ Fogg), les applications persuasives sont conçues pour faire évoluer le comportement des utilisateurs dans un but défini par le concepteur (i.e. faire du sport, manger sainement, acheter un objet, ...). Si ce domaine est captivant pour un UX Designer, il doit être considéré avec précausion à cause de toutes les questions d'éthiques qu'il soulève. Incitation VS. manipulation, la limite est fine et le designer devra se confronter à ses propres règles morales.",
@@ -94,7 +111,7 @@ function Topics() {
       key: "topic_persuasive"
     },
     {
-      imgSrc: timeWellSpentImage,
+      imgSrc: "time_well_spent.png",
       imgAlt: "Time Well Spent - Crédits à tristanharris.com",
       title: "Time Well Spent",
       text: "Tristan Harris a été philosophe produit chez Google, où il a été un des premiers à lever une alerte sur le marché de l'attention via nos smartphones : \"Le problème est que notre téléphone met un nouveau choix au menu, qui sera toujours mieux en apparence, plus gratifiant, que la réalité. Ce n’est pas vrai, mais ça nous donne cette impression.\". Notre attention vaut de l'or pour les compagnies comme Google, Apple, Facebook, Amazon, ... Il a donc décidé de créer un label, le \"Time Well Spent\" (\"Temps bien dépensé\") et le \"Centre pour une Technologie Humaine\" pour rendre aux utilisateurs leur liberté de choix au quotidien.",
@@ -116,8 +133,19 @@ function Topics() {
     }
   ];
 
+  const { allFile } = getTopicsImages();
+  const topicImages = allFile.edges;
+
   const topics = topicsData.map((topic, index) => {
-    let side = index % 2 === 0 ? "left" : "right";
+    const side = index % 2 === 0 ? "left" : "right";
+
+    // We find the correct image
+    const image = topicImages.find(function (imageNode) {
+      return imageNode.node.base === topic.imgSrc
+    });
+
+    topic.fluidImage = image;
+
     return (
       <div key={topic.key} className="row">
         <div className="col s12">

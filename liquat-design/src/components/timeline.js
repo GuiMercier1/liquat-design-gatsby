@@ -26,9 +26,9 @@ function Timeline(props) {
     });
 
     return (
-        <ul className="timeline">
+        <div className="timeline">
             {steps}
-        </ul>
+        </div>
     )
 }
 

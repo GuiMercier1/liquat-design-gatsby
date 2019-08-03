@@ -1,19 +1,17 @@
-body {
+/* body {
     margin: 0;
     padding: 0;
     font-size: 112.5%;
     line-height: 1.6em;
-  }
-  
-  .curriculum-title{
-    text-align:center;
-  }
-  
-  *, *:before, *:after {
-    /* -webkit-box-sizing: inherit; */
-    /* box-sizing: inherit; */
+}
+
+.curriculum-title {
+    text-align: center;
+} */
+
+.timeline *, *:before, *:after {
     box-sizing: content-box;
-  }
+}
 
 /* ================ The Timeline ================ */
 
@@ -170,8 +168,8 @@ body {
 
 .desc {
     margin: 1em 0.75em 0 0;
-    font-size: 0.9em;
-    line-height: 1.5em;
+    /* font-size: 0.9em;
+    line-height: 1.5em; */
 }
 
 .direction-r .desc {

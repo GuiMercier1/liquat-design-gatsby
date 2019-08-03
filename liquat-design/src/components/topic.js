@@ -1,14 +1,15 @@
 import React from "react"
+import Img from "gatsby-image"
 import styled from "styled-components"
 
 function Topic(props) {
 
     const ImageWrapper = styled.div`
-    max-width: 20%!important;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-`
+        min-width: 20%!important;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    `
 
     const TopicLinkContainer = styled.div`
         border-top: none!important;
@@ -26,21 +27,24 @@ function Topic(props) {
     `
 
     const links = props.topic.links.map((link, index) => {
-        const key = props.key + link;
+        const key = props.key + link.url;
         return (
             <TopicLink key={key} href={link.url} target="_blank" rel="noopener noreferrer">{link.title}</TopicLink>
         );
     });
 
+    console.log(props.topic.fluidImage);
+
     const img = <ImageWrapper className="card-image hide-on-small-only">
-        <img src={props.topic.imgSrc} alt={props.topic.imgAlt}></img>
-    </ImageWrapper>;
+        {/* <img src={props.topic.imgSrc} alt={props.topic.imgAlt}></img> */}
+        <Img fluid={props.topic.fluidImage.node.childImageSharp.fluid} style={{ minWidth: "100%" }} alt={props.topic.imgAlt}></Img>
+    </ImageWrapper >;
 
     const before = props.side === "left" ? img : null;
     const after = props.side === "right" ? img : null;
 
     return (
-        <div className="card horizontal">
+        <div key={props.key} className="card horizontal">
             {before}
             <div className="card-stacked">
                 <div className="card-content">
