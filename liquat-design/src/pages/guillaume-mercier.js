@@ -1,14 +1,14 @@
 import React, { useEffect } from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import ProjectCard from "../components/projectCard"
-import getProjectsData from "../helpers/getProjectsData"
+import useProjectsData from "../helpers/useProjectsData"
 
-import mainPhoto from "../images/photo-guillaume-mercier.jpg"
-import parallaxPicture from "../images/parallax_bg.jpg"
+import parallaxPicture from "../images/parallax_bg_very_light.jpg"
 
 import airbusPicture from "../images/companies/airbus.png"
 import armyPicture from "../images/companies/armee_de_terre.png"
@@ -16,6 +16,23 @@ import capgeminiPicture from "../images/companies/capgemini.png"
 import canalPicture from "../images/companies/canalplus.png"
 import inovansPicture from "../images/companies/inovans.png"
 import lfbPicture from "../images/companies/lfb.png"
+
+const getParallaxImage = () => {
+  const { mainPhoto } = useStaticQuery(
+    graphql`
+      query ParallaxQuery {
+        mainPhoto: file(relativePath: { eq: "photo-guillaume-mercier.jpg" }) {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }`
+  );
+
+  return { mainPhoto };
+};
 
 function GuillaumeMercier() {
 
@@ -26,11 +43,11 @@ function GuillaumeMercier() {
       key: "job_freelance"
     }, {
       title: "> UX DESIGNER",
-      tags: ["UX-DESIGN"],
+      tags: ["UX-DESIGN","PERSUASIVE", "BIG-DATA", "PROJECT-MANAGEMENT"],
       key: "job_ux"
     }, {
       title: "> WEB DEVELOPER",
-      tags: ["WEB-DEV"],
+      tags: ["WEB-DEV", "SPLUNK", "BIG-DATA", "SEO"],
       key: "job_web"
     }, {
       title: "> MANAGER",
@@ -146,23 +163,18 @@ function GuillaumeMercier() {
     )
   });
 
-  const { allDataJson, allFile } = getProjectsData();
-
-  const projectsData = allDataJson.edges[0].node.projects;
-  const imagesNodes = allFile.edges;
+  const { projects } = useProjectsData();
 
   // We only display 3 cards
-  const projects = projectsData.slice(0, 3).map((project) => {
+  const projectsToDisplay = projects.slice(0, 3).map((project) => {
 
-    // We find the correct image
-    const image = imagesNodes.find(function (imageNode) {
-      return imageNode.node.base === project.imageSrc
-    });
+    //TODO ADD RANDOM
+    console.log(project);
 
-    return (
-      <ProjectCard key={"project_" + project.id} project={project} image={image}></ProjectCard>
-    );
+    return <ProjectCard key={"project_" + project.id} project={project}></ProjectCard>;
   });
+
+  const { mainPhoto } = getParallaxImage();
 
   return (
     <Layout>
@@ -172,7 +184,7 @@ function GuillaumeMercier() {
           {/* <!-- Only for mobiles --> */}
           <div id="mobile-about" className="row hide-on-med-and-up">
             <div className="col center-align s12">
-              <img src={mainPhoto} className="main-pic circle" alt="Guillaume Mercier" />
+              <Img fluid={mainPhoto.childImageSharp.fluid} className="main-pic circle" alt="Guillaume Mercier" />
               <h1 className="page-head-title">GUILLAUME MERCIER</h1>
               {jobTitles}
               <h5 className="title-location">
@@ -194,7 +206,7 @@ function GuillaumeMercier() {
             </div>
             {/* <!-- Only for tablets/desktop --> */}
             <div className="col s6 center-align hide-on-small-only">
-              <img src={mainPhoto} className="main-pic circle" alt="Guillaume Mercier" />
+              <Img fluid={mainPhoto.childImageSharp.fluid} className="main-pic circle" alt="Guillaume Mercier" />
             </div>
           </div>
         </div>
@@ -248,11 +260,11 @@ function GuillaumeMercier() {
             </div>
           </div>
           <div className="row flex">
-            {projects}
+            {projectsToDisplay}
           </div>
           <div className="row">
             <div className="col s12 center">
-              <Link to="/guillaume-mercier/portfolio.html" className="waves-effect waves-light btn-large all-projects-button">
+              <Link to="/guillaume-mercier/portfolio" className="waves-effect waves-light btn-large all-projects-button">
                 <i className="material-icons left">web</i><span>Portfolio</span>
               </Link>
             </div>

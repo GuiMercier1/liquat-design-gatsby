@@ -774,6 +774,7 @@ h1.page-head-sub-title {
 
 .main-pic {
   width: 70%;
+  margin: auto;
 }
 
 .title-location {
@@ -843,7 +844,7 @@ ul.tasks-list>li {
 }
 
 .mobile-parallax .parallax-img {
-  width: 180%;
+  width: 100%;
 }
 
 .screen-parallax.parallax-container {
@@ -1013,6 +1014,7 @@ hr.rule {
   margin: 0 10px 0 0;
   text-decoration: none;
   -webkit-transition: color 0.2s;
+  cursor: pointer;
 }
 
 .filter-selected {

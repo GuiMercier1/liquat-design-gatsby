@@ -15,7 +15,8 @@
             "tags": [
                 "UX-DESIGN",
                 "WEB-DEV",
-                "MARKETING"
+                "MARKETING",
+                "SEO"
             ],
             "tasks": [
                 {
@@ -111,7 +112,8 @@
             "id": "digital-site",
             "opacity": 0.3,
             "tags": [
-                "WEB-DEV"
+                "WEB-DEV",
+                "SEO"
             ],
             "tasks": [
                 {
@@ -191,7 +193,8 @@
             "tags": [
                 "UX-DESIGN",
                 "BUSINESS",
-                "MARKETING"
+                "MARKETING",
+                "SEO"
             ],
             "tasks": [
                 {
@@ -329,9 +332,7 @@
             "opacity": 0.3,
             "tags": [
                 "UX-DESIGN",
-                "WEB-DEV",
-                "NODEJS",
-                "ANGULARJS"
+                "WEB-DEV"
             ],
             "tasks": [
                 {
@@ -364,7 +365,8 @@
                 }
             ],
             "tools": [
-                "En cours d'écriture..."
+                "ANGULARJS",
+                "NODEJS"
             ]
         },
         {
@@ -381,9 +383,7 @@
             "opacity": 0.3,
             "tags": [
                 "UX-DESIGN",
-                "WEB-DEV",
-                "NODEJS",
-                "ANGULARJS"
+                "WEB-DEV"
             ],
             "tasks": [
                 {
@@ -412,7 +412,8 @@
                 }
             ],
             "tools": [
-                "En cours d'écriture..."
+                "NODEJS",
+                "ANGULARJS"
             ]
         },
         {
@@ -430,8 +431,6 @@
             "tags": [
                 "UX-DESIGN",
                 "WEB-DEV",
-                "ELASTIC",
-                "ANGULARJS",
                 "PROJECT-MANAGEMENT"
             ],
             "tasks": [
@@ -461,7 +460,8 @@
                 }
             ],
             "tools": [
-                "En cours d'écriture..."
+                "ELASTIC",
+                "ANGULARJS"
             ]
         },
         {
@@ -478,9 +478,7 @@
             "opacity": 0.3,
             "tags": [
                 "UX-DESIGN",
-                "ANGULARJS",
-                "WEB-DEV",
-                "NODEJS"
+                "WEB-DEV"
             ],
             "tasks": [
                 {
@@ -505,7 +503,8 @@
                 }
             ],
             "tools": [
-                "En cours d'écriture..."
+                "ANGULARJS",
+                "NODEJS"
             ]
         },
         {
@@ -748,6 +747,41 @@
             ]
         },
         {
+            "fr_title": "Ubiloop",
+            "en_title": "",
+            "imageSrc": "ubiloop.jpg",
+            "fr_shortDescription": "Conception d'une application mobile pour déclarer des incidents sur la voie publique.",
+            "en_shortDescription": "",
+            "fr_longDescription": "",
+            "en_longDescription": "",
+            "customer": "e-Citiz",
+            "company": "Université Paul Sabatier",
+            "id": "ubiloop",
+            "opacity": 0.3,
+            "tags": [
+                "UX-DESIGN",
+                "WEB-DEV"
+            ],
+            "tasks": [
+                {
+                    "fr": "Analyse des besoins",
+                    "en": ""
+                },
+                {
+                    "fr": "Maquettage avec Mockflow",
+                    "en": ""
+                },
+                {
+                    "fr": "Développement via le CMS Wordpress",
+                    "en": ""
+                }
+            ],
+            "tools": [
+                "MOCKFLOW",
+                "WORDPRESS"
+            ]
+        },
+        {
             "fr_title": "Un besoin ?",
             "en_title": "Any need ?",
             "imageSrc": "workshop.jpg",
@@ -774,6 +808,74 @@
             "tools": [
                 "En cours d'écriture..."
             ]
+        }
+    ],
+    "tags": [
+        {
+            "id": "UX-DESIGN",
+            "name": "UX Design"
+        },
+        {
+            "id": "PROJECT-MANAGEMENT",
+            "name": "Gestion de projet"
+        },
+        {
+            "id": "WEB-DEV",
+            "name": "Dev Web"
+        },
+        {
+            "id": "HAPPINESS",
+            "name": "Gestion du Bien-être"
+        },
+        {
+            "id": "BUSINESS",
+            "name": "Business Management"
+        },
+        {
+            "id": "MARKETING",
+            "name": "Web Marketing"
+        },
+        {
+            "id": "SPLUNK",
+            "name": "Splunk"
+        },
+        {
+            "id": "TRAINING",
+            "name": "Formation"
+        },
+        {
+            "id": "BIG-DATA",
+            "name": "Big Data"
+        },
+        {
+            "id": "PERSUASIVE",
+            "name": "Apps Persuasives"
+        },
+        {
+            "id": "SEO",
+            "name": "SEO"
+        }
+    ],
+    "tools": [
+        {
+            "id": "ANGULARJS",
+            "name": "AngularJS"
+        },
+        {
+            "id": "ELASTIC",
+            "name": "Elastic Search"
+        },
+        {
+            "id": "NODEJS",
+            "name": "NodeJS"
+        },
+        {
+            "id": "MOCKFLOW",
+            "name": "Mockflow"
+        },
+        {
+            "id": "WORDPRESS",
+            "name": "WordPress"
         }
     ]
 }

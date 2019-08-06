@@ -33,8 +33,6 @@ function Topic(props) {
         );
     });
 
-    console.log(props.topic.fluidImage);
-
     const img = <ImageWrapper className="card-image hide-on-small-only">
         {/* <img src={props.topic.imgSrc} alt={props.topic.imgAlt}></img> */}
         <Img fluid={props.topic.fluidImage.node.childImageSharp.fluid} style={{ minWidth: "100%" }} alt={props.topic.imgAlt}></Img>
