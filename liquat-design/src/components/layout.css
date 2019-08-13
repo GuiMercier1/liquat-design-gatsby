@@ -1081,6 +1081,25 @@ hr.rule {
   color: #f1770f;
 }
 
+.g-recaptcha {
+  display: inline-block;
+}
+
+.success-toastr{
+  background-color:#51a351;
+  color:white;
+}
+
+.info-toastr{
+  background-color:#2f96b4;
+  color:white;
+}
+
+.error-toastr{
+  background-color:#bd362f;
+  color:white;
+}
+
 /**********
 * SPINNER
 *********/

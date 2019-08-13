@@ -1,108 +1,100 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useRef } from "react"
+
+import { Link } from "gatsby"
 
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import ProjectCard from "../../components/projectCard"
 
 import useProjectsData from "../../helpers/useProjectsData"
-import { updateSourceFile } from "typescript";
 
 // http://localhost:8000/___graphql
 
 function Portfolio() {
 
-  // Will deserve to know if first time or not
-  const step = useRef(false);
-
   const { projects } = useProjectsData();
 
-  let basefilterList = [];
+  let filters = [];
   projects.forEach(project => {
     project.tags.forEach(tag => {
-      if (basefilterList.indexOf(tag) === -1) {
+      if (filters.indexOf(tag) === -1) {
         tag.active = false;
-        basefilterList.push(tag);
+        filters.push(tag);
       }
     });
   });
 
-  const [filters, setFilters] = useState(basefilterList);
-
-  checkOrUpdateUrl();
-
-  let activeFilters = getActiveFilters();
-
-  // If all filters are inactive => All projects must be displayed
-  if (activeFilters.length === 0) activeFilters = filters;
-
-  const projectsCards = projects.reduce(function (projectsReduced, project) {
-
-    let mustBeDisplayed = false;
-    project.tags.forEach(tag => {
-      const filterIndex = activeFilters.findIndex(filter => tag.id === filter.id);
-      if (filterIndex !== -1) mustBeDisplayed = true;
-    });
-
-    if (mustBeDisplayed) projectsReduced.push(<ProjectCard key={"project_" + project.id} project={project}></ProjectCard>);
-
-    return projectsReduced;
-  }, []);
-
-  function onFilterClick(filterID) {
-    const focusedFilter = filters.find(filter => filter.id === filterID);
-    focusedFilter.active = !focusedFilter.active;
-    setFilters(filters.slice(0));
-  }
+  setActiveFiltersFromURL();
+  filters.forEach(setFilterLink);
+  const projectsCards = getProjectsToDisplay();
 
   function getActiveFilters() {
     return filters.filter(filter => filter.active);
   }
 
-  function updateURL() {
+  function setActiveFiltersFromURL() {
+    const filtersInUrl = getQueryObject().filter;
 
-    let newFilterQuery = "portfolio?";
-    const activeFilters = getActiveFilters();
+    if (filtersInUrl === undefined) return;
 
+    if (typeof filtersInUrl === 'string') {
+      let focusedFilter = filters.find(filter => filter.id === filtersInUrl);
+      focusedFilter.active = true;
+    }
+    else if (filtersInUrl) {
+      filtersInUrl.forEach((urlFilter) => {
+        let focusedFilter = filters.find(filter => filter.id === urlFilter);
+        focusedFilter.active = true;
+      });
+    }
+
+    return getActiveFilters();
+  }
+
+  function setFilterLink(baseFilter) {
+    let activeFilters = getActiveFilters();
+
+    console.log("Filter id : ", baseFilter.id);
+    console.log("Filter active : ", baseFilter.active);
+    // We - virtually - toggle the filter status
+    if (baseFilter.active) {
+      activeFilters = activeFilters.filter(filter => filter.id !== baseFilter.id);
+    } else {
+      activeFilters.push(baseFilter);
+    }
+
+    console.log(activeFilters);
+
+    // Then we build the URL
+    let newFilterQuery = "/guillaume-mercier/portfolio?";
     activeFilters.forEach(function (filter, index) {
       newFilterQuery += "filter=" + filter.id;
       if (index < activeFilters.length - 1) newFilterQuery += "&";
     });
 
-    window.history.pushState('', '', newFilterQuery);
+    console.log(newFilterQuery);
+
+    baseFilter.url = newFilterQuery;
   }
 
-  function checkOrUpdateUrl() {
-    // If not first time
-    if (step.current) {
-      updateURL();
-    } else {
+  function getProjectsToDisplay() {
+    let activeFilters = getActiveFilters();
 
-      step.current = true;
+    // If all filters are inactive => All projects must be displayed
+    if (activeFilters.length === 0) activeFilters = filters;
 
-      console.log(getQueryObject());
-      const filtersInUrl = getQueryObject().filter;
+    return projects.reduce(function (projectsReduced, project) {
 
-      if (filtersInUrl === undefined) return;
+      let mustBeDisplayed = false;
+      project.tags.forEach(tag => {
+        const filterIndex = activeFilters.findIndex(filter => tag.id === filter.id);
+        if (filterIndex !== -1) mustBeDisplayed = true;
+      });
 
-      if (typeof filtersInUrl === 'string') {
-        let focusedFilter = filters.find(filter => filter.id === filtersInUrl);
-        focusedFilter.active = true;
+      if (mustBeDisplayed) projectsReduced.push(<ProjectCard key={"project_" + project.id} project={project}></ProjectCard>);
 
-        console.log(focusedFilter);
-      }
-      else if (filtersInUrl) {
-        console.log(filtersInUrl);
-
-        filtersInUrl.forEach((urlFilter) => {
-          let focusedFilter = filters.find(filter => filter.id === urlFilter);
-          focusedFilter.active = true;
-
-          console.log(focusedFilter);
-        });
-      }
-
-      setFilters(filters.slice(0));
-    }
+      return projectsReduced;
+    }, []);
   }
 
   return (
@@ -121,7 +113,7 @@ function Portfolio() {
           <div className="row">
             <div className="col s12">
               <ul className="filters">
-                {filters.map(filter => <Filter key={filter.id} filter={filter} onClick={onFilterClick}></Filter>)}
+                {filters.map(filter => <Filter key={filter.id} filter={filter}></Filter>)}
               </ul>
             </div>
           </div>
@@ -134,10 +126,10 @@ function Portfolio() {
   )
 }
 
-function Filter({ filter, onClick }) {
+function Filter({ filter }) {
   return (
     <li key={"filter_" + filter.id}>
-      <span className={"filter " + (filter.active ? "filter-selected" : "")} onClick={() => onClick(filter.id)}>#{filter.name}</span>
+      <Link className={"filter " + (filter.active ? "filter-selected" : "")} to={filter.url}>#{filter.name}</Link>
     </li>
   );
 }
@@ -148,10 +140,6 @@ function getQueryObject() {
   // get query string from window
   var queryString = window.location.search.slice(1);
 
-  return computeQueryObject(queryString);
-}
-
-function computeQueryObject(queryString) {
   // we'll store the parameters here
   var obj = {};
 

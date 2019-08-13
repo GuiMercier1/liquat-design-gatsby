@@ -49,7 +49,10 @@
                 }
             ],
             "tools": [
-                "En cours d'écriture..."
+                "JSS",
+                "JSX",
+                "REACT",
+                "GATSBY"
             ]
         },
         {
@@ -876,6 +879,22 @@
         {
             "id": "WORDPRESS",
             "name": "WordPress"
+        },
+        {
+            "id": "JSS",
+            "name": "JSS"
+        },
+        {
+            "id": "JSX",
+            "name": "JSX"
+        },
+        {
+            "id": "REACT",
+            "name": "ReactJS"
+        },
+        {
+            "id": "GATSBY",
+            "name": "GatsbyJS"
         }
     ]
 }
