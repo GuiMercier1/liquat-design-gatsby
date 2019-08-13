@@ -52,7 +52,8 @@
                 "JSS",
                 "JSX",
                 "REACT",
-                "GATSBY"
+                "GATSBY",
+                "JAMSTACK"
             ]
         },
         {
@@ -895,6 +896,10 @@
         {
             "id": "GATSBY",
             "name": "GatsbyJS"
+        },
+        {
+            "id" : "JAMSTACK",
+            "name" : "JAMstack"
         }
     ]
 }

@@ -28,6 +28,11 @@ const Contact = () => {
       value: "",
       isValid: false,
       class: ""
+    },
+    captcha:
+    {
+      value: "",
+      isValid: false,
     }
   });
 
@@ -37,19 +42,15 @@ const Contact = () => {
 
   // For features which must be executed once - because of the []
   useEffect(() => {
-    console.log("Use effect once ?");
     emailjs.init("user_VSM3AeK2lk1H2vARunueI");
   }, []);
 
   // For features which must be executed for every update
   useEffect(() => {
-    console.log("Use effect each ?");
 
     const isFormValid = !Object.values(formData).some(formInput => {
       return formInput.isValid === false;
     });
-
-    console.log(formData);
 
     setIsFormValid(isFormValid);
   });
@@ -93,11 +94,10 @@ const Contact = () => {
   }
 
   const onCaptchaChange = (value) => {
-    console.log("TODO Change");
     if (value !== null && value !== undefined) {
       setFormData(prevFormData => ({
         ...prevFormData,
-        isCaptchaValid: {
+        captcha: {
           value: value,
           isValid: true
         }
@@ -105,47 +105,36 @@ const Contact = () => {
     }
   }
 
-  const onCaptchaErrored = (error) => {
-    //TODO 
-    console.log("TODO Errored");
-    console.log(error);
+  const onCaptchaErrored = () => {
+    M.toast({ html: "Une erreur est survenue. Contactez-moi directement sur mon adresse mail.", classes: "error-toastr" });
   }
 
   const onCaptchaExpired = () => {
-    //TODO 
-    console.log("TODO Expired");
+    M.toast({ html: "Captcha expiré, rechargez la page pour envoyer un mail.", classes: "info-toastr" });
   }
 
   const sendMail = (event) => {
     event.preventDefault();
-
-    recaptchaRef.current.execute();
-
     console.log("Sending ...");
 
-    // M.toast({ html: "Envoi en cours ...", classes: "info-toastr" });
+    M.toast({ html: "Envoi en cours ...", classes: "info-toastr" });
 
-    // emailjs.sendForm('gmail', 'template_ciR8ayRa', '#contact-form')
-    //   .then(function (response) {
-    //     M.toast({ html: "Message envoyé !", classes: "success-toastr" });
-    //     // Then we clean the form
-    //     console.log('SUCCESS!', response.status, response.text);
-    //   }, function (error) {
-    //     if (error.status === 400) {
-    //       M.toast({ html: "Une erreur est survenue. Avez-vous confirmé que vous n'êtes pas un robot ?", classes: "error-toastr" });
-    //     }
-    //     else {
-    //       M.toast({ html: "Une erreur est survenue. Contactez-moi directement sur mon adresse mail.", classes: "error-toastr" });
-    //     }
+    emailjs.sendForm('gmail', 'template_ciR8ayRa', '#contact-form')
+      .then(function (response) {
+        M.toast({ html: "Message envoyé !", classes: "success-toastr" });
+        // Then we clean the form
+        console.log('SUCCESS!', response.status, response.text);
+      }, function (error) {
+        if (error.status === 400) {
+          M.toast({ html: "Une erreur est survenue. Avez-vous confirmé que vous n'êtes pas un robot ?", classes: "error-toastr" });
+        }
+        else {
+          M.toast({ html: "Une erreur est survenue. Contactez-moi directement sur mon adresse mail.", classes: "error-toastr" });
+        }
 
-    //     console.log('FAILED...', error);
-    //   });
+        console.log('FAILED...', error);
+      });
   };
-
-  // const MyCaptcha = React.memo((props) => {
-  //   console.log("My captcha init");
-  //   return <ReCaptcha sitekey="6Lc-g7AUAAAAAAu219Ijm2c2m49vxwylqWfoh02m" onChange={onCaptchaChange} onErrored={onCaptchaErrored} onExpired={onCaptchaExpired}></ReCaptcha>
-  // }, []);
 
   /* STYLING COMPONENTS */
   const CenterWrapper = styled.div`
@@ -189,9 +178,9 @@ const Contact = () => {
               </div>
             </div>
             <div className="row">
-              <CenterWrapper className="input-field col s12 m6 offset-m3 mail-input">
-                <ReCaptcha ref={recaptchaRef} sitekey="6Lc-g7AUAAAAAAu219Ijm2c2m49vxwylqWfoh02m" size="invisible" onChange={onCaptchaChange} onErrored={onCaptchaErrored} onExpired={onCaptchaExpired}></ReCaptcha>
-              </CenterWrapper>
+              <div className="input-field col s12 m6 offset-m3 mail-input center-align">
+                <ReCaptcha className="g-recaptcha" ref={recaptchaRef} sitekey="6Lc-g7AUAAAAAAu219Ijm2c2m49vxwylqWfoh02m" onChange={onCaptchaChange} onErrored={onCaptchaErrored} onExpired={onCaptchaExpired}></ReCaptcha>
+              </div>
             </div>
             <div className="row">
               <CenterWrapper className="input-field col s12 m6 offset-m3 mail-input">
