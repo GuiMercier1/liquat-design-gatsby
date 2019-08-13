@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 
 import Layout from "../../components/layout"
@@ -6,7 +6,10 @@ import SEO from "../../components/seo"
 
 import * as emailjs from 'emailjs-com';
 import ReCaptcha from 'react-google-recaptcha'
-import M from 'materialize-css'
+
+if (typeof window !== 'undefined') {
+  require('materialize-css/dist/js/materialize.min.js')
+}
 
 const Contact = () => {
 
@@ -69,7 +72,7 @@ const Contact = () => {
   }
 
   const validateEmail = (email) => {
-    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
   }
 
@@ -106,30 +109,30 @@ const Contact = () => {
   }
 
   const onCaptchaErrored = () => {
-    M.toast({ html: "Une erreur est survenue. Contactez-moi directement sur mon adresse mail.", classes: "error-toastr" });
+    window.M.toast({ html: "Une erreur est survenue. Contactez-moi directement sur mon adresse mail.", classes: "error-toastr" });
   }
 
   const onCaptchaExpired = () => {
-    M.toast({ html: "Captcha expiré, rechargez la page pour envoyer un mail.", classes: "info-toastr" });
+    window.M.toast({ html: "Captcha expiré, veuillez le saisir à nouveau pour continuer.", classes: "info-toastr" });
   }
 
   const sendMail = (event) => {
     event.preventDefault();
     console.log("Sending ...");
 
-    M.toast({ html: "Envoi en cours ...", classes: "info-toastr" });
+    window.M.toast({ html: "Envoi en cours ...", classes: "info-toastr" });
 
     emailjs.sendForm('gmail', 'template_ciR8ayRa', '#contact-form')
       .then(function (response) {
-        M.toast({ html: "Message envoyé !", classes: "success-toastr" });
+        window.M.toast({ html: "Message envoyé !", classes: "success-toastr" });
         // Then we clean the form
         console.log('SUCCESS!', response.status, response.text);
       }, function (error) {
         if (error.status === 400) {
-          M.toast({ html: "Une erreur est survenue. Avez-vous confirmé que vous n'êtes pas un robot ?", classes: "error-toastr" });
+          window.M.toast({ html: "Une erreur est survenue. Avez-vous confirmé que vous n'êtes pas un robot ?", classes: "error-toastr" });
         }
         else {
-          M.toast({ html: "Une erreur est survenue. Contactez-moi directement sur mon adresse mail.", classes: "error-toastr" });
+          window.M.toast({ html: "Une erreur est survenue. Contactez-moi directement sur mon adresse mail.", classes: "error-toastr" });
         }
 
         console.log('FAILED...', error);

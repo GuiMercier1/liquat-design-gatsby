@@ -17,6 +17,10 @@ import canalPicture from "../images/companies/canalplus.png"
 import inovansPicture from "../images/companies/inovans.png"
 import lfbPicture from "../images/companies/lfb.png"
 
+if (typeof window !== 'undefined') {
+  require('materialize-css/dist/js/materialize.min.js')
+}
+
 const getParallaxImage = () => {
   const { mainPhoto } = useStaticQuery(
     graphql`
@@ -169,8 +173,6 @@ function GuillaumeMercier() {
   const projectsToDisplay = projects.slice(0, 3).map((project) => {
 
     //TODO ADD RANDOM
-    console.log(project);
-
     return <ProjectCard key={"project_" + project.id} project={project}></ProjectCard>;
   });
 

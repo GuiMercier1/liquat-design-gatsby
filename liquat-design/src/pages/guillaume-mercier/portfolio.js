@@ -1,6 +1,7 @@
-import React, { useState, useRef } from "react"
+import React from "react"
 
 import { Link } from "gatsby"
+import { Location } from '@reach/router';
 
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
@@ -10,7 +11,7 @@ import useProjectsData from "../../helpers/useProjectsData"
 
 // http://localhost:8000/___graphql
 
-function Portfolio() {
+function Portfolio(props) {
 
   const { projects } = useProjectsData();
 
@@ -33,7 +34,7 @@ function Portfolio() {
   }
 
   function setActiveFiltersFromURL() {
-    const filtersInUrl = getQueryObject().filter;
+    const filtersInUrl = getQueryObject(props.location.search).filter;
 
     if (filtersInUrl === undefined) return;
 
@@ -54,8 +55,6 @@ function Portfolio() {
   function setFilterLink(baseFilter) {
     let activeFilters = getActiveFilters();
 
-    console.log("Filter id : ", baseFilter.id);
-    console.log("Filter active : ", baseFilter.active);
     // We - virtually - toggle the filter status
     if (baseFilter.active) {
       activeFilters = activeFilters.filter(filter => filter.id !== baseFilter.id);
@@ -63,16 +62,12 @@ function Portfolio() {
       activeFilters.push(baseFilter);
     }
 
-    console.log(activeFilters);
-
     // Then we build the URL
     let newFilterQuery = "/guillaume-mercier/portfolio?";
     activeFilters.forEach(function (filter, index) {
       newFilterQuery += "filter=" + filter.id;
       if (index < activeFilters.length - 1) newFilterQuery += "&";
     });
-
-    console.log(newFilterQuery);
 
     baseFilter.url = newFilterQuery;
   }
@@ -135,10 +130,10 @@ function Filter({ filter }) {
 }
 
 // Provides a JS object from all the query strings
-function getQueryObject() {
+function getQueryObject(locationSearch) {
 
   // get query string from window
-  var queryString = window.location.search.slice(1);
+  var queryString = locationSearch.slice(1);
 
   // we'll store the parameters here
   var obj = {};
@@ -200,4 +195,8 @@ function getQueryObject() {
   return obj;
 }
 
-export default Portfolio;
+export default props => (
+  <Location>
+    {locationProps => <Portfolio {...locationProps} {...props} />}
+  </Location>
+);

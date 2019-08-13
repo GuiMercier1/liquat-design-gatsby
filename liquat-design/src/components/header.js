@@ -2,6 +2,10 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
+if (typeof window !== 'undefined') {
+  require('materialize-css/dist/js/materialize.min.js')
+}
+
 class Header extends React.Component {
 
   componentDidMount() {
