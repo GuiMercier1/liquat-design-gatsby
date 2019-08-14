@@ -13,7 +13,6 @@ import Header from "./header"
 import Footer from "./footer"
 
 import "materialize-css/dist/css/materialize.min.css"
-// import "materialize-css/dist/js/materialize.min.js"
 import "./layout.css"
 
 const Layout = ({ children }) => {

@@ -21,10 +21,10 @@ if (typeof window !== 'undefined') {
   require('materialize-css/dist/js/materialize.min.js')
 }
 
-const getParallaxImage = () => {
+const useMainPicture = () => {
   const { mainPhoto } = useStaticQuery(
     graphql`
-      query ParallaxQuery {
+      query GuillaumePictureQuery {
         mainPhoto: file(relativePath: { eq: "photo-guillaume-mercier.jpg" }) {
           childImageSharp {
             fluid {
@@ -38,7 +38,7 @@ const getParallaxImage = () => {
   return { mainPhoto };
 };
 
-function GuillaumeMercier() {
+const GuillaumeMercier = () => {
 
   const jobs = [
     {
@@ -176,7 +176,7 @@ function GuillaumeMercier() {
     return <ProjectCard key={"project_" + project.id} project={project}></ProjectCard>;
   });
 
-  const { mainPhoto } = getParallaxImage();
+  const { mainPhoto } = useMainPicture();
 
   return (
     <Layout>
