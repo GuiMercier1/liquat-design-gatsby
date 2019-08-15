@@ -1,19 +1,20 @@
 import React from "react"
 
 import { Link } from "gatsby"
-import { Location } from '@reach/router';
 
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import ProjectCard from "../../components/projectCard"
 
-import useProjectsData from "../../helpers/useProjectsData"
+import useTalentData from "../../helpers/useTalentData";
 
 // http://localhost:8000/___graphql
 
-function Portfolio(props) {
+const Portfolio = props => {
 
-  const { projects } = useProjectsData();
+  const talentData = props.talentData;
+
+  const projects = talentData.projects;
 
   let filters = [];
   projects.forEach(project => {
@@ -93,8 +94,7 @@ function Portfolio(props) {
   }
 
   return (
-
-    <Layout>
+    <>
       <SEO title="Portfolio" />
       <div className="section">
         <div className="container">
@@ -117,7 +117,7 @@ function Portfolio(props) {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   )
 }
 
@@ -196,7 +196,7 @@ function getQueryObject(locationSearch) {
 }
 
 export default props => (
-  <Location>
-    {locationProps => <Portfolio {...locationProps} {...props} />}
-  </Location>
-);
+  <Layout>
+    <Portfolio {...props}/>
+  </Layout>
+)

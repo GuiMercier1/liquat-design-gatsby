@@ -141,7 +141,7 @@ class Experiences extends React.Component {
   render() {
 
     return (
-      <Layout>
+      <>
         <SEO title="Experiences" />
         <div className="section">
           <div className="container">
@@ -172,9 +172,13 @@ class Experiences extends React.Component {
             </div>
           </div>
         </div>
-      </Layout>
+      </>
     )
   }
 }
 
-export default Experiences
+export default props => (
+  <Layout>
+    <Experiences {...props}/>
+  </Layout>
+)

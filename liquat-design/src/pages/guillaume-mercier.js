@@ -6,16 +6,16 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import ProjectCard from "../components/projectCard"
-import useProjectsData from "../helpers/useProjectsData"
+import useTalentData from "../helpers/useTalentData"
 
-import parallaxPicture from "../images/parallax_bg_very_light.jpg"
+import parallaxPicture from "../images/guillaume-mercier/parallax_bg_very_light.jpg"
 
-import airbusPicture from "../images/companies/airbus.png"
-import armyPicture from "../images/companies/armee_de_terre.png"
-import capgeminiPicture from "../images/companies/capgemini.png"
-import canalPicture from "../images/companies/canalplus.png"
-import inovansPicture from "../images/companies/inovans.png"
-import lfbPicture from "../images/companies/lfb.png"
+import airbusPicture from "../images/guillaume-mercier/companies/airbus.png"
+import armyPicture from "../images/guillaume-mercier/companies/armee_de_terre.png"
+import capgeminiPicture from "../images/guillaume-mercier/companies/capgemini.png"
+import canalPicture from "../images/guillaume-mercier/companies/canalplus.png"
+import inovansPicture from "../images/guillaume-mercier/companies/inovans.png"
+import lfbPicture from "../images/guillaume-mercier/companies/lfb.png"
 
 if (typeof window !== 'undefined') {
   require('materialize-css/dist/js/materialize.min.js')
@@ -38,7 +38,7 @@ const useMainPicture = () => {
   return { mainPhoto };
 };
 
-const GuillaumeMercier = () => {
+const GuillaumeMercier = props => {
 
   const jobs = [
     {
@@ -47,7 +47,7 @@ const GuillaumeMercier = () => {
       key: "job_freelance"
     }, {
       title: "> UX DESIGNER",
-      tags: ["UX-DESIGN","PERSUASIVE", "BIG-DATA", "PROJECT-MANAGEMENT"],
+      tags: ["UX-DESIGN", "PERSUASIVE", "BIG-DATA", "PROJECT-MANAGEMENT"],
       key: "job_ux"
     }, {
       title: "> WEB DEVELOPER",
@@ -167,7 +167,8 @@ const GuillaumeMercier = () => {
     )
   });
 
-  const { projects } = useProjectsData();
+  const talentData = props.talentData;
+  const projects = talentData.projects;
 
   // We only display 3 cards
   const projectsToDisplay = projects.slice(0, 3).map((project) => {
@@ -179,7 +180,7 @@ const GuillaumeMercier = () => {
   const { mainPhoto } = useMainPicture();
 
   return (
-    <Layout>
+    <>
       <SEO title="Accueil" />
       <div className="section valign-wrapper about-section">
         <div className="container">
@@ -298,7 +299,11 @@ const GuillaumeMercier = () => {
           </div>
         </div>
       </div>
-    </Layout>)
+    </>)
 }
 
-export default GuillaumeMercier
+export default props => (
+  <Layout>
+    <GuillaumeMercier {...props}/>
+  </Layout>
+)

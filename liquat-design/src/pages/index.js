@@ -81,12 +81,12 @@ const IndexPage = () => {
   const { photoGuillaume, photoAlice } = useMainPictures();
 
   return (
-    <Layout>
+    <>
       <SEO title="Home" />
       <div className="page-content">
         <div className="row">
           <div className="col center-align s12">
-            <LiquatTitle>LIQUAT DESIGN c'est ...</LiquatTitle>
+            <LiquatTitle>LIQUAT DESIGN</LiquatTitle>
           </div>
         </div>
         <div className="section valign-wrapper">
@@ -100,6 +100,9 @@ const IndexPage = () => {
                 <h1 className="page-head-title">
                   <LinkTitle to="/alice-foissy">ALICE-ANNE FOISSY</LinkTitle>
                 </h1>
+                <h5>
+                  <LinkTitle to="/alice-foissy/portfolio">FREELANCE</LinkTitle>
+                </h5>
                 <h5>
                   <LinkTitle to="/alice-foissy/portfolio">> UX DESIGNER</LinkTitle>
                 </h5>
@@ -116,6 +119,9 @@ const IndexPage = () => {
                 <h1 className="page-head-title">
                   <LinkTitle to="/alice-foissy">ALICE-ANNE FOISSY</LinkTitle>
                 </h1>
+                <h5>
+                  <LinkTitle to="/alice-foissy/portfolio">FREELANCE</LinkTitle>
+                </h5>
                 <h5>
                   <LinkTitle to="/alice-foissy/portfolio">> UX DESIGNER</LinkTitle>
                 </h5>
@@ -175,8 +181,12 @@ const IndexPage = () => {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   )
 };
 
-export default IndexPage
+export default props => (
+  <Layout>
+    <IndexPage {...props}/>
+  </Layout>
+)

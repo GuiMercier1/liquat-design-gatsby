@@ -145,7 +145,7 @@ const Contact = () => {
   `
 
   return (
-    <Layout>
+    <>
       <SEO title="Contact" />
       <div className="section">
         <div className="container">
@@ -196,8 +196,12 @@ const Contact = () => {
           </form>
         </div>
       </div>
-    </Layout>
+    </>
   )
 }
 
-export default Contact
+export default props => (
+  <Layout>
+    <Contact {...props}/>
+  </Layout>
+)

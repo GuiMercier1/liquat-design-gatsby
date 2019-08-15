@@ -9,7 +9,7 @@ const getTopicsImages = () => {
   const { allFile } = useStaticQuery(
     graphql`
       query TopicsQuery {
-        allFile(filter: {relativePath: {regex: "/(topics\/)/"}}) {
+        allFile(filter: {relativePath: {regex: "/guillaume-mercier/topics/"}}) {
           edges {
             node {
               childImageSharp {
@@ -156,7 +156,7 @@ function Topics() {
   });
 
   return (
-    <Layout>
+    <>
       <SEO title="Inspirations" />
       <div className="section">
         <div className="container">
@@ -172,8 +172,12 @@ function Topics() {
           {topics}
         </div>
       </div>
-    </Layout>
+    </>
   )
 }
-
-export default Topics
+ 
+export default props => (
+  <Layout>
+    <Topics {...props}/>
+  </Layout>
+)

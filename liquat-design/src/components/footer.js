@@ -1,7 +1,10 @@
+import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import PropTypes from "prop-types"
-import React from "react"
+import styled from "styled-components"
+
+import useTalentData from "../helpers/useTalentData"
 
 import 'material-icons/iconfont/material-icons.css'
 
@@ -26,6 +29,20 @@ function Footer(props) {
     link: "https://github.com/GuiMercier1",
     text: "Expériences plus ou moins réussies"
   }
+
+  const talentData = props.talentData;
+  const color = talentData.color;
+  const veryDarkColor = talentData.veryDarkColor;
+  const brand = talentData.logoInitials;
+  const homeLink = talentData.homeLink;
+  const links = talentData.links;
+  const contactLink = talentData.contactLink;
+  const mail = talentData.mail;
+  const fullName = talentData.fullName;
+  const jobLine = talentData.jobLine;
+
+  const StyledFooter = styled.footer`background-color:${color};`;
+  const StyledCopyrightFooter = styled.div`background-color:${veryDarkColor}!important;`;
 
   const data = useStaticQuery(graphql`
     query {
@@ -53,8 +70,11 @@ function Footer(props) {
     }
   `)
 
+
+  
+
   return (
-    <footer className="page-footer">
+    <StyledFooter className="page-footer">
       <div className="container">
         <div className="row">
           <div className="col s12 m6">
@@ -65,19 +85,19 @@ function Footer(props) {
             </div>
             <div className="footer-link-wrapper">
               <a className="grey-text text-lighten-3" href={linkedin.link} target="_blank" rel="noopener noreferrer">
-                <Img className="link-icon" fixed={data.linkedinImage.childImageSharp.fixed} alt="Logo LinkedIn"/>
+                <Img className="link-icon" fixed={data.linkedinImage.childImageSharp.fixed} alt="Logo LinkedIn" />
                 <span>{linkedin.text}</span>
               </a>
             </div>
             <div className="footer-link-wrapper">
               <a className="grey-text text-lighten-3" href={twitter.link} target="_blank" rel="noopener noreferrer">
-                <Img className="link-icon" fixed={data.twitterImage.childImageSharp.fixed} alt="Logo Twitter"/>
+                <Img className="link-icon" fixed={data.twitterImage.childImageSharp.fixed} alt="Logo Twitter" />
                 <span >{twitter.text}</span>
               </a>
             </div>
             <div className="footer-link-wrapper">
               <a className="grey-text text-lighten-3" href={github.link} target="_blank" rel="noopener noreferrer">
-                <Img className="link-icon" fixed={data.githubImage.childImageSharp.fixed} alt="Logo GitHub"/>
+                <Img className="link-icon" fixed={data.githubImage.childImageSharp.fixed} alt="Logo GitHub" />
                 <span>{github.text}</span>
               </a>
             </div>
@@ -90,12 +110,12 @@ function Footer(props) {
           </div>
         </div>
       </div>
-      <div className="footer-copyright">
+      <StyledCopyrightFooter className="footer-copyright">
         <div className="container">
           © {new Date().getFullYear()} Liquat Design
         </div>
-      </div>
-    </footer>
+      </StyledCopyrightFooter>
+    </StyledFooter>
   )
 }
 
