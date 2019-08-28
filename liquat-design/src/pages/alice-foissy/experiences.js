@@ -11,129 +11,64 @@ class Experiences extends React.Component {
 
     this.experiences = [{
       title: "Freelance",
-      date: "Mai 2019 - Présent",
+      date: "Août 2019 - Présent",
       description: (<>
-        <p>
-          Conseil en transformation digitale, développement web, UX Design, Management, AMOA.
-        </p>
-        <p>
-          <a href='./contact' target='_blank' rel="noopener noreferrer">Contactez-moi</a> pour discuter de vos projets !
-        </p>
+        Contactez-moi pour discuter de vos projets.
       </>),
-      key: "job_freelance2"
+      key: "job_freelance"
     }, {
-      title: "Dev. Splunk",
-      date: "Mai 2019 - Présent",
-      description: <>Développement en freelance de dashboards Splunk personnalisés en JavaScript pour Canal +, Métro et Idnomic.</>,
-      key: "job_splunk"
+      title: "CToutVert",
+      date: "Mai 2018 - Déc. 2018",
+      description: <ul>
+        <li>Amélioration de l’expérience utilisateur sur le logiciel d’administration des campings.</li>
+        <li>Refonte du logiciel de gestion des réservations par téléphone</li>
+        <li>Conception d’une appli interne pour le partage des photos de vacances dans les campings du groupe.</li>
+      </ul>,
+      key: "job_ctv"
     }, {
-      title: "Inovans",
-      date: "Sept. 2017 - Jan. 2019",
+      title: "Bertin - HDG",
+      date: "Sept. 2017 - Déc. 2017",
       description: (<>
         <ul>
-          <li>UX design et développement de dashboards Splunk pour Airbus</li>
-          <li>Écriture et présentation d'une formation Splunk</li>
-          <li>Gestion du bien-être au travail</li>
-          <li>UX et gestion de projets internes pour Inovans</li>
+          <li>Refonte d’un portail à destination des Ingénieurs Commerciaux.</li>
+          <li>Analyse de l’activité des techniciens Orange et sous-traitants en répartiteurs habités pour la refonte de leur application métier.</li>
         </ul>
       </>),
-      key: "job_inovans"
+      key: "job_hdg"
     }, {
-      title: "\"Au Bureau\"",
-      date: "Août. 2018 - Sept. 2018",
-      description: <>Chef de rang et serveur dans un bar-restaurant</>,
-      key: "job_aubureau"
+      title: "Orange",
+      date: "Mars 2017 - Août 2017",
+      description: <ul>
+        <li>Conception d’une grille d’évaluation de la charge de travail et d’un modèle de représentation graphique des ressources mobilisées pour réaliser l’activité.</li>
+        <li>Soutien sur divers projets du SI.</li>
+      </ul>,
+      key: "job_orange"
     }, {
-      title: "Voyage",
-      date: "Déc. 2016 - Juillet. 2017",
-      description: <>Voyage en sac-à-dos en Asie du Sud-Est et à La Réunion pour découvrir et se découvrir :)</>,
-      key: "job_trip"
-    }, {
-      title: "Sycomore T.",
-      date: "Oct. 2015 - Nov. 2016",
-      description: <>UX Design et Web dev :
-      <ul>
-          <li>Appli d’analyse et de visualisation de données scientifiques</li>
-          <li>Appli de catalogage dynamique des fichiers d’une entreprise</li>
-          <li>Appli de gestion des échantillons d’un laboratoire</li>
-        </ul>
-      </>,
-      key: "job_syco"
-    }, {
-      title: "Capgemini",
-      date: "Juin 2015 - Oct. 2015",
-      description: <>UX Design et Web dev :
-      <ul>
-          <li>Conception d'un outil de saisie d'informations et de négociation pour les marchés internationaux.</li>
-          <li>Conception d'une application de gestion et de consultation des doctrines de l'Armée</li>
-          <li>Conception et dev d'une appli de communication avec un robot spatial</li>
-        </ul>
-      </>,
-      key: "job_capge"
-    }, {
-      title: "Freelance",
-      date: "Nov. 2014 - Juin 2015",
-      description: <>UX Design et Web dev : <ul>
-        <li>Appli d’analyse et de visualisation de données scientifiques</li>
-        <li>Appli de catalogage dynamique des fichiers d’une entreprise</li>
-        <li>Appli de gestion des échantillons d’un laboratoire</li>
-      </ul>
-      </>,
-      key: "job_freelance1"
-    }, {
-      title: "Efficiencia",
-      date: "Sept. 2013 - Sept. 2014",
-      description: <>
-        <ul>
-          <li>Conception d'un serious game pour mieux gérer la consommation énergétique des  bâtiments.</li>
-          <li>Conception d'un logiciel de saisie thermique</li>
-          <li>Conception et développement d'un outil Web pour visualiser les prévisions de consommation énergétique des bâtiments.</li>
-        </ul>
-      </>,
-      key: "job_efficiencia"
-    }, {
-      title: "IntuiFace",
-      date: "Mai 2013 - Août 2013",
-      description: <>Développement de composants graphiques multi-touch et implémentation d'un moteur physique en HTML5</>,
-      key: "job_intuiface"
-    }, {
-      title: "Upsilon",
-      date: "Nov. 2012 - Fév. 2013",
-      description: <>Développement d'un éditeur d'images Web et d'un éditeur de texte in-line</>,
-      key: "job_upsilon"
-    }, {
-      title: "Millegen",
-      date: "Juil. 2012 - Août 2012",
-      description: <>Développement d'un outil représentant les interactions entre les fichiers d'une plate-forme d'applications de bio-informatique</>,
-      key: "job_millegen"
-    }
-    ];
+      title: "UTBM",
+      date: "Mars 2015 - Sept. 2015",
+      description: <ul>
+        <li>Recommandations d’intégrations des technologies dans les futurs véhicules militaires pour le projet Scorpion de l’Armée de Terre.</li>
+        <li>UTBM : Université de Technologie Belfort-Montbéliard</li>
+      </ul>,
+      key: "job_utbm"
+    }];
 
     this.studies = [
       {
-        title: "Master IHM",
-        date: "2011 - 2013",
+        title: "Master Ergonomie",
+        date: "2016 - 2017",
         description: (<>
-          <p>UX Design, Psychologie cognitive, Architecture de l'information, Data visualisation, Développement d'interfaces, Management de projets, Agilité</p>
-          <p>ENAC / Paul Sabatier, Toulouse</p>
+          Master 2 Pro Sociologie et Ergonomie des Technologies Numériques - Université Sophia-Antipolis, Nice
         </>),
-        key: "study_ihm"
+        key: "study_ergo"
       }, {
-        title: "Licence Informatique",
-        date: "2010 - 2011",
-        description: (<>
-          <p>Développement (Java, Web, Assembleur, Camel, ...), Gestion de projet, Architecture logicielle</p>
-          <p>Paul Sabatier, Toulouse</p>
-        </>),
-        key: "study_computer"
-      }, {
-        title: "Maîtrise de Maths",
-        date: "2005 - 2010",
-        description: (<>
-          <p>Mathématiques appliquées à l'Enseignement, Mathématiques fondamentales, Admissible au CAPES</p>
-          <p>Paul Sabatier, Toulouse</p>
-        </>),
-        key: "study_maths"
+        title: "Master Psycho",
+        date: "2014 - 2015",
+        description: (<ul>
+          <li>Master 2 Pro Psychologie spécialité Ergonomie Cognitive et Ingénierie Linguistique Université Toulouse 2 Jean Jaurès.</li>
+          <li>Mémoire : Apports et limites d'une intervention en psychologie et ergonomie cognitive dans le cadre de l'intégration de technologies innovantes dans des véhicules militaires (sous la direction de M. André TRICOT).</li>
+        </ul>),
+        key: "study_psycho"
       }
     ]
   }
@@ -179,6 +114,6 @@ class Experiences extends React.Component {
 
 export default props => (
   <Layout>
-    <Experiences {...props}/>
+    <Experiences {...props} />
   </Layout>
 )

@@ -4,6 +4,8 @@ import PropTypes from "prop-types"
 import React, { useEffect } from "react"
 import styled from "styled-components"
 
+import useTalentTheme from "../helpers/useTalentTheme"
+
 if (typeof window !== 'undefined') {
   require('materialize-css/dist/js/materialize.min.js')
 }
@@ -30,6 +32,8 @@ const Header = props => {
   const mail = talentData.mail;
   const fullName = talentData.fullName;
   const jobLine = talentData.jobLine;
+
+  useTalentTheme(talentData.id);
 
   const StyledNav = styled.nav`background-color:${color};`;
   const StyledSidenav = styled.ul`background-color:${color};`;

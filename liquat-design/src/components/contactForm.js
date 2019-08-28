@@ -167,7 +167,7 @@ const ContactForm = props => {
             <div className="section">
                 <div className="container">
                     <CenterWrapper className="row no-bottom">
-                        <h1 className="page-head-sub-title colored-title">Contact</h1>
+                        <h1 className="page-head-sub-title colored-title">Contactons-nous !</h1>
                         <p>Un besoin ? Un projet ? Discutons-en !</p>
                     </CenterWrapper>
                 </div>

@@ -130,7 +130,7 @@ const AliceFoissy = props => {
 
     return (
       <h5 key={job.key}>
-        <Link to={link} className="main-job">{job.title}</Link>
+        <b><Link to={link} className="main-job">{job.title}</Link></b>
       </h5>
     );
   });
@@ -177,20 +177,21 @@ const AliceFoissy = props => {
           {/* <!-- Only for mobiles --> */}
           <div id="mobile-about" className="row hide-on-med-and-up">
             <div className="col center-align s12">
-              <Img fluid={mainPhoto.childImageSharp.fluid} className="main-pic circle" alt="Alice Foissy" />
-              <h1 className="page-head-title">ALICE FOISSY</h1>
+              <Img fluid={mainPhoto.childImageSharp.fluid} className="main-pic circle" alt="Alice-Anne Foissy" />
+              <h1 className="page-head-title">ALICE-ANNE FOISSY</h1>
               {jobTitles}
               <h5 className="title-location">
-                <i className="material-icons left">&#xe0c8;</i>Saint Paul, La Réunion</h5>
+                <b><i className="material-icons left">&#xe0c8;</i>Saint Paul, La Réunion</b>
+              </h5>
             </div>
           </div>
           <div className="row valign-wrapper">
             <div className="col m8 hide-on-small-only">
-              <h1 className="page-head-title">Alice Foissy</h1>
+              <h1 className="page-head-title">ALICE-ANNE FOISSY</h1>
               {jobTitles}
               <h5 className="title-location">
-                <i className="material-icons left">&#xe0c8;</i>Saint Paul, La Réunion
-                </h5>
+                <b><i className="material-icons left">&#xe0c8;</i>Saint Paul, La Réunion</b>
+              </h5>
               {/* <!--<p className="flow-text">Vous souhaitez concevoir un produit innovant et adapté à vos utilisateurs ?
             Développer des applications web modernes et performantes ? Faire évoluer votre
             entreprise vers un format plus proche des collaborateurs ?
@@ -199,7 +200,7 @@ const AliceFoissy = props => {
             </div>
             {/* <!-- Only for tablets/desktop --> */}
             <div className="col s6 center-align hide-on-small-only">
-              <Img fluid={mainPhoto.childImageSharp.fluid} className="main-pic circle" alt="Alice Foissy" />
+              <Img fluid={mainPhoto.childImageSharp.fluid} className="main-pic circle" alt="Alice-Anne Foissy" />
             </div>
           </div>
         </div>
