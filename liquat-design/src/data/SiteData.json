@@ -878,10 +878,6 @@
                     "link": "/alice-foissy/experiences"
                 },
                 {
-                    "title": "Inspirations",
-                    "link": "/alice-foissy/topics"
-                },
-                {
                     "title": "Contact",
                     "link": "/alice-foissy/contact"
                 },
@@ -893,7 +889,7 @@
             "projects": [
                 {
                     "fr_title": "Interface Callcenter",
-                    "imageSrc": "projects/callcenter.png",
+                    "imageSrc": "callcenter.png",
                     "fr_shortDescription": "Refonte d’une interface métier pour les opérateurs de centrales de réservation dans le métier du tourisme.",
                     "fr_longDescription": "Des campings de luxe proposant un système de réservation de vacances par téléphone voulaient rendre leurs interfaces plus fluides pour leurs opérateurs. ",
                     "customer": "CToutVert",
@@ -924,7 +920,7 @@
                 },
                 {
                     "fr_title": "Interface gestion de camping",
-                    "imageSrc": "projects/camping.jpg",
+                    "imageSrc": "camping.jpg",
                     "fr_shortDescription": "Refonte de l’interface d’administration de campings",
                     "fr_longDescription": "L’interface d'administration pour les gérants de campings était vieillissante et de nombreuses fonctionnalités avaient été rajouté au fil du temps sans réelle réflexion sur la logique d’utilisation. Les gérants n’étant pas disponibles le travail de refonte a été fait avec l’appui des opératrices de la hotline qui utilisent l’interface pour configurer les informations lorsque les gérants ne souhaitent pas le faire eux-mêmes.",
                     "customer": "CToutVert",
@@ -955,7 +951,7 @@
                 },
                 {
                     "fr_title": "Interface appli techniciens",
-                    "imageSrc": "projects/techniciens.png",
+                    "imageSrc": "techniciens.png",
                     "fr_shortDescription": "Analyse de l’activité des techniciens Orange pour la refonte de leur application métier",
                     "fr_longDescription": "Les concepteurs de l’application avaient besoin d’avoir une vision fidèle de l’activité des techniciens Orange (et sous traitant) pour proposer des fonctionnalités pertinentes.",
                     "customer": "Orange",
@@ -980,7 +976,7 @@
                 },
                 {
                     "fr_title": "Evaluation de la charge de travail",
-                    "imageSrc": "projects/charge.png",
+                    "imageSrc": "charge.png",
                     "fr_shortDescription": "Création d’une grille d’évaluation de la charge de travail en vue de l‘automatisation des postes de travail chez Orange",
                     "fr_longDescription": "En vue d’une automatisation des tâches les chefs de projets souhaitaient un moyen d’évaluer quelles tâches devaient être conservées, lesquelles pouvaient être automatisées, lesquelles étaient considérées comme rébarbatives...",
                     "customer": "Orange",
@@ -1005,7 +1001,7 @@
                 },
                 {
                     "fr_title": "Projet Scorpion",
-                    "imageSrc": "projects/militaire.jpg",
+                    "imageSrc": "militaire.jpg",
                     "fr_shortDescription": "Etude amont sur l’intégration de nouvelles technologies dans les véhicules militaires.",
                     "fr_longDescription": "L’armée de terre souhaitait de nouveaux véhicules pour ses armées et voulaient les doter de nouvelles technologies pour les rendre plus sécuritaires et performants.",
                     "customer": "Direction Générale de l'Armement",
@@ -1033,7 +1029,7 @@
                 },
                 {
                     "fr_title": "Elektroscop",
-                    "imageSrc": "projects/elektroscop.png",
+                    "imageSrc": "elektroscop.png",
                     "fr_shortDescription": "Aide à la conception et au positionnement stratégique pour la sortie du site Elektroscop.",
                     "fr_longDescription": "Elektroscop est un site créé pour permettre aux fans de musique électronique de trouver des soirées à proximité. Nous avons accompagné leurs créateurs pour le design de leur site et leur positionnement stratégique.",
                     "customer": "Elektroscop",

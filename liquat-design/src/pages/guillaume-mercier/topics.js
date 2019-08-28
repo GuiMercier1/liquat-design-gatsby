@@ -8,7 +8,7 @@ import SEO from "../../components/seo"
 const getTopicsImages = () => {
   const { allFile } = useStaticQuery(
     graphql`
-      query TopicsQuery {
+      query GuillaumeMercierTopicsQuery {
         allFile(filter: {relativePath: {regex: "/guillaume-mercier/topics/"}}) {
           edges {
             node {

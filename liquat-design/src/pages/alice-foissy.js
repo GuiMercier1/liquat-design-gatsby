@@ -7,14 +7,15 @@ import SEO from "../components/seo"
 
 import ProjectCard from "../components/projectCard"
 
-import parallaxPicture from "../images/guillaume-mercier/parallax_bg_very_light.jpg"
+import parallaxPicture from "../images/alice-foissy/parallax_bg3.jpg"
 
-import airbusPicture from "../images/guillaume-mercier/companies/airbus.png"
-import armyPicture from "../images/guillaume-mercier/companies/armee_de_terre.png"
-import capgeminiPicture from "../images/guillaume-mercier/companies/capgemini.png"
-import canalPicture from "../images/guillaume-mercier/companies/canalplus.png"
-import inovansPicture from "../images/guillaume-mercier/companies/inovans.png"
-import lfbPicture from "../images/guillaume-mercier/companies/lfb.png"
+import orangePicture from "../images/alice-foissy/companies/orange.png"
+import armyPicture from "../images/alice-foissy/companies/armee_de_terre.png"
+import ctvPicture from "../images/alice-foissy/companies/CTV.png"
+import hdgPicture from "../images/alice-foissy/companies/HDG.jpg"
+import airFrancePicture from "../images/alice-foissy/companies/air_france.png"
+
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 if (typeof window !== 'undefined') {
   require('materialize-css/dist/js/materialize.min.js')
@@ -23,8 +24,8 @@ if (typeof window !== 'undefined') {
 const useMainPicture = () => {
   const { mainPhoto } = useStaticQuery(
     graphql`
-      query GuillaumePictureQuery {
-        mainPhoto: file(relativePath: { eq: "photo-guillaume-mercier.jpg" }) {
+      query AliceFoissyQuery {
+        mainPhoto: file(relativePath: { eq: "photo-alice-foissy.jpg" }) {
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid
@@ -37,7 +38,7 @@ const useMainPicture = () => {
   return { mainPhoto };
 };
 
-const GuillaumeMercier = props => {
+const AliceFoissy = props => {
 
   const jobs = [
     {
@@ -46,77 +47,69 @@ const GuillaumeMercier = props => {
       key: "job_freelance"
     }, {
       title: "> UX DESIGNER",
-      tags: ["UX-DESIGN", "PERSUASIVE", "BIG-DATA", "PROJECT-MANAGEMENT"],
+      tags: [],
       key: "job_ux"
     }, {
-      title: "> WEB DEVELOPER",
-      tags: ["WEB-DEV", "SPLUNK", "BIG-DATA", "SEO"],
+      title: "> PSYCHOLOGUE",
+      tags: [],
       key: "job_web"
-    }, {
-      title: "> MANAGER",
-      tags: ["PROJECT-MANAGEMENT", "HAPPINESS", "BUSINESS"],
-      key: "job_management"
-    },
+    }
   ];
 
   const skills = [
     {
-      title: "Développeur Web",
-      description: <>De la conception à son développement, travaillons ensemble pour créer un site web à votre image, grâce aux dernières technologies (React, Angular, Gatsby, JSS, ...)</>,
-      icon: <>&#xe326;</>,
-      key: "skill_dev_web"
+      title: "Analyse des besoins des utilisateurs",
+      description: <>Vous voulez proposer des outils adaptés à votre public, pour cela je vais sur le terrain pour connaître les utilisateurs, leurs tâches et leur environnement.</>,
+      icon: <i className="fas fa-microscope"></i>,
+      key: "skill_needs"
     }, {
-      title: "UX Designer",
-      description: <><p>Je mets ma créativité à l'écoute de vos utilisateurs pour concevoir des logiciels utiles, utilisables et attractifs.</p><p>Pour en savoir plus sur l'UX Design :&nbsp;<a href='https://theblog.adobe.com/what-does-a-ux-designer-actually-do/' target='_blank' rel="noopener noreferrer">cliquez ici.</a></p></>,
-      icon: "how_to_reg",
-      key: "skill_ux"
+      title: "Co-création avec les utilisateurs",
+      description: <>Ateliers de brainstorming pour générer des idées de conception, définir l'architecture d'un site ou encore création de prototype papier. Les utilisateurs sont vos alliés !</>,
+      icon: <i className="fas fa-users"></i>,
+      key: "skill_codesign"
     }, {
-      title: "Chef de projet",
-      description: <>Je gère pour vous les coûts, les délais et la qualité de votre projet tout en assurant la communication interne et le lien entre les différents acteurs.</>,
-      icon: <>&#xe7ef;</>,
-      key: "skill_lead"
-    }, {
-      title: "Product Owner",
-      description: <>Elaborons ensemble une stratégie autour de votre produit, et je veille à sa réalisation auprès du client et des équipes de développement.</>,
-      icon: <>&#xe8cc;</>,
-      key: "skill_po"
-    }, {
-      title: "Développeur Splunk",
-      description: <>Dépassons les limites de Splunk pour créer des dashboards dynamiques qui présentent des données utiles et utilisables en suivant les préceptes de la \"data visualization\".</>,
-      icon: <>&#xe315;</>,
-      key: "skill_splunk"
-    }, {
-      title: "Booster d'équipe",
-      description: <>Le travail n'a pas à être pénible ! Renforçons ensemble la motivation de vos équipes pour créer un environnement dans lequel nous pourrons tous révéler notre plein potentiel.</>,
-      icon: <>&#xe1a3;</>,
+      title: "Travail en équipes multidisciplinaires",
+      description: <>Prendre en compte les contraintes de temps, de budget, les contraintes techniques… je travaille main dans la main avec tous les acteurs du projet pour proposer des solutions réalistes et non pas une licorne à paillettes <i className="far fa-laugh-beam"></i></>,
+      icon: <i className="far fa-handshake"></i>,
       key: "skill_team"
+    }, {
+      title: "Background en psychologie",
+      description: <>Mon master en psychologie me permet de recueillir des informations en influençant au minimum les utilisateurs. Mes connaissances dans la prise de décision, l'attention ou encore le traitement de l'information soutiennent mes propositions d'interfaces.</>,
+      icon: <i className="fas fa-graduation-cap"></i>,
+      key: "skill_psycho"
+    }, {
+      title: "Conception de maquettes",
+      description: <>Prototype papier ou informatique pour traduire les besoins en interfaces. Elles me servent à tester les concepts avant leur développement pour vous éviter de perdre du temps et de l'argent, et ça c'est important pour vous <i className="far fa-smile"></i></>,
+      icon: <i className="material-icons">&#xe326;</i>,
+      key: "skill_mockups"
+    }, {
+      title: "Agilité",
+      description: <>L'essence même de l'UX Design ! Travailler en sprints courts pour confronter les concepts choisis avec la réalité du terrain, et vérifier qu'on ne fait pas fausse route.</>,
+      icon: <i className="fas fa-infinity"></i>,
+      key: "skill_agility"
     },
   ];
 
   const companiesPictures = [{
-    src: canalPicture,
-    alt: "Canal +",
-    key: "picture_canal"
+    src: orangePicture,
+    alt: "Orange",
+    key: "picture_orange"
   }, {
     src: armyPicture,
     alt: "Armée de Terre",
     key: "picture_army"
   }, {
-    src: capgeminiPicture,
-    alt: "Capgemini",
-    key: "picture_capgemini"
+    src: ctvPicture,
+    alt: "CToutVert",
+    key: "picture_ctoutvert"
   }, {
-    src: airbusPicture,
-    alt: "Airbus",
-    key: "picture_airbus"
+    src: hdgPicture,
+    alt: "Human Design Group",
+    key: "picture_hdg"
   }, {
-    src: inovansPicture,
-    alt: "Inovans",
-    key: "picture_inovans"
-  }, {
-    src: lfbPicture,
-    alt: "LFB",
-    key: "picture_lfb"
+    src: airFrancePicture,
+    alt: "Air France",
+    key: "picture_af"
   }];
 
   useEffect(() => {
@@ -133,7 +126,7 @@ const GuillaumeMercier = props => {
       urlTags += "filter=" + tag;
     });
 
-    const link = "/guillaume-mercier/portfolio" + urlTags;
+    const link = "/alice-foissy/portfolio" + urlTags;
 
     return (
       <h5 key={job.key}>
@@ -146,9 +139,7 @@ const GuillaumeMercier = props => {
     return (
       <div className="col s12 m4 center-align skill-text-col" key={skill.key}>
         <div className="skill-content">
-          <div className="skill-icon">
-            <i className="material-icons">{skill.icon}</i>
-          </div>
+          <div className="skill-icon">{skill.icon}</div>
           <p className="skill-title">{skill.title}</p>
           <div className="skill-text">
             {skill.description}
@@ -186,8 +177,8 @@ const GuillaumeMercier = props => {
           {/* <!-- Only for mobiles --> */}
           <div id="mobile-about" className="row hide-on-med-and-up">
             <div className="col center-align s12">
-              <Img fluid={mainPhoto.childImageSharp.fluid} className="main-pic circle" alt="Guillaume Mercier" />
-              <h1 className="page-head-title">GUILLAUME MERCIER</h1>
+              <Img fluid={mainPhoto.childImageSharp.fluid} className="main-pic circle" alt="Alice Foissy" />
+              <h1 className="page-head-title">ALICE FOISSY</h1>
               {jobTitles}
               <h5 className="title-location">
                 <i className="material-icons left">&#xe0c8;</i>Saint Paul, La Réunion</h5>
@@ -195,7 +186,7 @@ const GuillaumeMercier = props => {
           </div>
           <div className="row valign-wrapper">
             <div className="col m8 hide-on-small-only">
-              <h1 className="page-head-title">GUILLAUME MERCIER</h1>
+              <h1 className="page-head-title">Alice Foissy</h1>
               {jobTitles}
               <h5 className="title-location">
                 <i className="material-icons left">&#xe0c8;</i>Saint Paul, La Réunion
@@ -208,7 +199,7 @@ const GuillaumeMercier = props => {
             </div>
             {/* <!-- Only for tablets/desktop --> */}
             <div className="col s6 center-align hide-on-small-only">
-              <Img fluid={mainPhoto.childImageSharp.fluid} className="main-pic circle" alt="Guillaume Mercier" />
+              <Img fluid={mainPhoto.childImageSharp.fluid} className="main-pic circle" alt="Alice Foissy" />
             </div>
           </div>
         </div>
@@ -232,7 +223,7 @@ const GuillaumeMercier = props => {
             <div className="col s12 center-align">
               <h3 className="colored-title">Compétences</h3>
               <p className="skill-intro">
-                Avec plus de 5 ans d'expériences dans l'univers du digital, je peux assister vos projets, vos clients et vos utilisateurs de plusieurs manières :
+                Vous souhaitez concevoir une application métier, un site grand public, l'interface d'une borne de paiement, je suis là pour garantir une expérience agréable à vos utilisateurs, tout en leur permettant d'accomplir leur tâche d'une manière simple et intuitive.
                 </p>
             </div>
           </div>
@@ -266,7 +257,7 @@ const GuillaumeMercier = props => {
           </div>
           <div className="row">
             <div className="col s12 center">
-              <Link to="/guillaume-mercier/portfolio" className="waves-effect waves-light btn-large all-projects-button">
+              <Link to="/alice-foissy/portfolio" className="waves-effect waves-light btn-large all-projects-button">
                 <i className="material-icons left">web</i><span>Portfolio</span>
               </Link>
             </div>
@@ -303,6 +294,6 @@ const GuillaumeMercier = props => {
 
 export default props => (
   <Layout>
-    <GuillaumeMercier {...props}/>
+    <AliceFoissy {...props} />
   </Layout>
 )

@@ -38,15 +38,15 @@ const Layout = props => {
 
   let focusedTalent;
 
-  if (props.location.pathname === "/") focusedTalent = TALENTS.LIQUAT;
-  else if (props.location.pathname.startsWith("/guillaume-mercier")) focusedTalent = TALENTS.GUILLAUME;
+  if (props.location.pathname.startsWith("/guillaume-mercier")) focusedTalent = TALENTS.GUILLAUME;
   else if (props.location.pathname.startsWith("/alice-foissy")) focusedTalent = TALENTS.ALICE;
+  else focusedTalent = TALENTS.LIQUAT;
+
+  console.log(props.location.pathname);
 
   const { talentData } = useTalentData({ talent: focusedTalent });
 
   const childrenWithTalentData = React.cloneElement(props.children, { talentData: talentData });
-
-  console.log("children", childrenWithTalentData);
 
   return (
     <>

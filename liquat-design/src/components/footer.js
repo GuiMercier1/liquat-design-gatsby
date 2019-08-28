@@ -4,45 +4,9 @@ import Img from "gatsby-image"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
-import useTalentData from "../helpers/useTalentData"
-
 import 'material-icons/iconfont/material-icons.css'
 
 function Footer(props) {
-
-  const contact = {
-    link: "/guillaume-mercier/contact",
-    text: "gui.mercier1@gmail.com"
-  }
-
-  const linkedin = {
-    link: "https://www.linkedin.com/in/guillaume-mercier-7632b058/",
-    text: "Panne de réseau ?"
-  }
-
-  const twitter = {
-    link: "https://twitter.com/gui_mercier",
-    text: "Reliquat du temps libre"
-  }
-
-  const github = {
-    link: "https://github.com/GuiMercier1",
-    text: "Expériences plus ou moins réussies"
-  }
-
-  const talentData = props.talentData;
-  const color = talentData.color;
-  const veryDarkColor = talentData.veryDarkColor;
-  const brand = talentData.logoInitials;
-  const homeLink = talentData.homeLink;
-  const links = talentData.links;
-  const contactLink = talentData.contactLink;
-  const mail = talentData.mail;
-  const fullName = talentData.fullName;
-  const jobLine = talentData.jobLine;
-
-  const StyledFooter = styled.footer`background-color:${color};`;
-  const StyledCopyrightFooter = styled.div`background-color:${veryDarkColor}!important;`;
 
   const data = useStaticQuery(graphql`
     query {
@@ -70,44 +34,123 @@ function Footer(props) {
     }
   `)
 
+  const talentData = props.talentData;
+  const color = talentData.color;
+  const veryDarkColor = talentData.veryDarkColor;
 
-  
+  const StyledFooter = styled.footer`background-color:${color};`;
+  const StyledCopyrightFooter = styled.div`background-color:${veryDarkColor}!important;`;
+
+  let content;
+  switch (props.talentData.id) {
+    case "ALICE":
+      content = getAliceContent();
+      break;
+    case "GUILLAUME":
+      content = getGuillaumeContent();
+      break;
+    case "LIQUAT":
+    default:
+      content = getLiquatContent();
+  }
+
+  function getAliceContent() {
+    return (
+      <>
+        <div className="col s12 m6">
+          <h4 className="white-text">Contactez-moi !</h4>
+          <div className="footer-link-wrapper">
+            <Link to="/alice-foissy/contact" className="grey-text text-lighten-3"><i
+              className="material-icons left">mail_outline</i>alice.foissy@gmail.com</Link>
+          </div>
+          <div className="footer-link-wrapper">
+            <a className="grey-text text-lighten-3" href="https://www.linkedin.com/in/alice-anne-foissy-93b16290/" target="_blank" rel="noopener noreferrer">
+              <Img className="link-icon" fixed={data.linkedinImage.childImageSharp.fixed} alt="Logo LinkedIn" />
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+        <div className="col s12 m4">
+          <h4 className="white-text">Votre avis m'intéresse</h4>
+          <p className="grey-text text-lighten-4 spaced-text">
+            Si vous êtes ici, ce site devrait être conçu pour répondre à vos attentes. Satisfait ou pas, je serais heureuse d'avoir votre retour, n'hésitez pas à m'envoyer <a className="orange-link" href="/alice-foissy/contact" target="_blank" rel="noopener noreferrer">un mail</a>.
+          </p>
+        </div>
+      </>
+    );
+  }
+
+  function getGuillaumeContent() {
+    return (
+      <>
+        <div className="col s12 m6">
+          <h4 className="white-text">Contactez-moi !</h4>
+          <div className="footer-link-wrapper">
+            <Link to="/guillaume-mercier/contact" className="grey-text text-lighten-3"><i
+              className="material-icons left">mail_outline</i>gui.mercier1@gmail.com</Link>
+          </div>
+          <div className="footer-link-wrapper">
+            <a className="grey-text text-lighten-3" href="https://www.linkedin.com/in/guillaume-mercier-7632b058/" target="_blank" rel="noopener noreferrer">
+              <Img className="link-icon" fixed={data.linkedinImage.childImageSharp.fixed} alt="Logo LinkedIn" />
+              <span>Panne de réseau ?</span>
+            </a>
+          </div>
+          <div className="footer-link-wrapper">
+            <a className="grey-text text-lighten-3" href="https://twitter.com/gui_mercier" target="_blank" rel="noopener noreferrer">
+              <Img className="link-icon" fixed={data.twitterImage.childImageSharp.fixed} alt="Logo Twitter" />
+              <span >Reliquat du temps libre</span>
+            </a>
+          </div>
+          <div className="footer-link-wrapper">
+            <a className="grey-text text-lighten-3" href="https://github.com/GuiMercier1" target="_blank" rel="noopener noreferrer">
+              <Img className="link-icon" fixed={data.githubImage.childImageSharp.fixed} alt="Logo GitHub" />
+              <span>Expériences plus ou moins réussies</span>
+            </a>
+          </div>
+        </div>
+        <div className="col s12 m4">
+          <h4 className="white-text">Votre avis m'intéresse</h4>
+          <p className="grey-text text-lighten-4 spaced-text">
+            Si vous êtes ici, ce site devrait être conçu pour répondre à vos attentes. Satisfait ou pas, je serais heureux d'avoir votre retour, n'hésitez pas à m'envoyer <a className="orange-link" href="/guillaume-mercier/contact" target="_blank" rel="noopener noreferrer">un mail</a>.
+        </p>
+        </div>
+      </>
+    );
+  }
+
+  function getLiquatContent() {
+    return (
+      <>
+        <div className="col s12 m6">
+          <h4 className="white-text">Contactez-nous !</h4>
+          <div className="footer-link-wrapper">
+            <p>
+              <Link to="/contact" className="grey-text text-lighten-3">
+                <i className="material-icons left">mail_outline</i>gui.mercier1@gmail.com
+              </Link>
+            </p>
+            <p>
+              <Link to="/alice-foissy/contact" className="grey-text text-lighten-3">
+                <i className="material-icons left">mail_outline</i>alice.foissy@gmail.com
+              </Link>
+            </p>
+          </div>
+        </div>
+        <div className="col s12 m4">
+          <h4 className="white-text">Votre avis nous intéresse</h4>
+          <p className="grey-text text-lighten-4 spaced-text">
+            Si vous êtes ici, ce site devrait être conçu pour répondre à vos attentes. Satisfait ou pas, je serais heureux d'avoir votre retour, n'hésitez pas à nous envoyer <a className="orange-link" href="/contact" target="_blank" rel="noopener noreferrer">un mail</a>.
+        </p>
+        </div>
+      </>
+    );
+  }
 
   return (
     <StyledFooter className="page-footer">
       <div className="container">
         <div className="row">
-          <div className="col s12 m6">
-            <h4 className="white-text">Contactez-moi !</h4>
-            <div className="footer-link-wrapper">
-              <Link to={contact.link} className="grey-text text-lighten-3"><i
-                className="material-icons left">mail_outline</i>{contact.text}</Link>
-            </div>
-            <div className="footer-link-wrapper">
-              <a className="grey-text text-lighten-3" href={linkedin.link} target="_blank" rel="noopener noreferrer">
-                <Img className="link-icon" fixed={data.linkedinImage.childImageSharp.fixed} alt="Logo LinkedIn" />
-                <span>{linkedin.text}</span>
-              </a>
-            </div>
-            <div className="footer-link-wrapper">
-              <a className="grey-text text-lighten-3" href={twitter.link} target="_blank" rel="noopener noreferrer">
-                <Img className="link-icon" fixed={data.twitterImage.childImageSharp.fixed} alt="Logo Twitter" />
-                <span >{twitter.text}</span>
-              </a>
-            </div>
-            <div className="footer-link-wrapper">
-              <a className="grey-text text-lighten-3" href={github.link} target="_blank" rel="noopener noreferrer">
-                <Img className="link-icon" fixed={data.githubImage.childImageSharp.fixed} alt="Logo GitHub" />
-                <span>{github.text}</span>
-              </a>
-            </div>
-          </div>
-          <div className="col s12 m4">
-            <h4 className="white-text">Votre avis m'intéresse</h4>
-            <p className="grey-text text-lighten-4 spaced-text">
-              Si vous êtes ici, ce site devrait être conçu pour répondre à vos attentes. Satisfait ou pas, je serais heureux d'avoir votre retour, n'hésitez pas à m'envoyer <a className="orange-link" href={contact.link} target="_blank" rel="noopener noreferrer">un mail</a>.
-            </p>
-          </div>
+          {content}
         </div>
       </div>
       <StyledCopyrightFooter className="footer-copyright">
@@ -116,7 +159,7 @@ function Footer(props) {
         </div>
       </StyledCopyrightFooter>
     </StyledFooter>
-  )
+  );
 }
 
 Footer.propTypes = {

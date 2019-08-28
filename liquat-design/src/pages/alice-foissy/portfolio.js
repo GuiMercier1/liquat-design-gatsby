@@ -6,8 +6,6 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import ProjectCard from "../../components/projectCard"
 
-// http://localhost:8000/___graphql
-
 const Portfolio = props => {
 
   const talentData = props.talentData;
@@ -62,7 +60,7 @@ const Portfolio = props => {
     }
 
     // Then we build the URL
-    let newFilterQuery = "/guillaume-mercier/portfolio?";
+    let newFilterQuery = "/alice-foissy/portfolio?";
     activeFilters.forEach(function (filter, index) {
       newFilterQuery += "filter=" + filter.id;
       if (index < activeFilters.length - 1) newFilterQuery += "&";
@@ -73,6 +71,11 @@ const Portfolio = props => {
 
   function getProjectsToDisplay() {
     let activeFilters = getActiveFilters();
+
+    // If no filters provided
+    if (filters.length === 0) {
+      return projects.map(project => <ProjectCard key={"project_" + project.id} project={project}></ProjectCard>);
+    }
 
     // If all filters are inactive => All projects must be displayed
     if (activeFilters.length === 0) activeFilters = filters;
@@ -91,6 +94,16 @@ const Portfolio = props => {
     }, []);
   }
 
+  const filterWrapper = filters.length === 0 ? <></> : (
+    <div className="row">
+      <div className="col s12">
+        <ul className="filters">
+          {filters.map(filter => <Filter key={filter.id} filter={filter}></Filter>)}
+        </ul>
+      </div>
+    </div>
+  );
+
   return (
     <>
       <SEO title="Portfolio" />
@@ -103,13 +116,7 @@ const Portfolio = props => {
               </h1>
             </div>
           </div>
-          <div className="row">
-            <div className="col s12">
-              <ul className="filters">
-                {filters.map(filter => <Filter key={filter.id} filter={filter}></Filter>)}
-              </ul>
-            </div>
-          </div>
+          {filterWrapper}
           <div className="row flex" id="projects-list">
             {projectsCards}
           </div>
@@ -195,6 +202,6 @@ function getQueryObject(locationSearch) {
 
 export default props => (
   <Layout>
-    <Portfolio {...props}/>
+    <Portfolio {...props} />
   </Layout>
 )
