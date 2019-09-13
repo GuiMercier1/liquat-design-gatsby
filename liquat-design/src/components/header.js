@@ -52,13 +52,17 @@ const Header = props => {
     );
   });
 
+  const BurgerIcon = styled.i`
+    font-size:32px!important;
+  `
+
   return (
     <header>
       <div className="navbar-fixed">
         <StyledNav>
           <div className="nav-wrapper">
             <Link to={homeLink} className="brand-logo">{brand}</Link>
-            <span data-target="mobile-menu" className="sidenav-trigger right hide-on-large-only" onClick={sidenavClickHandler}><i className="material-icons">menu</i></span>
+            <span data-target="mobile-menu" className="sidenav-trigger right hide-on-large-only" onClick={sidenavClickHandler}><BurgerIcon className="material-icons">menu</BurgerIcon></span>
             <ul className="right hide-on-med-and-down">
               {baseLinks}
             </ul>

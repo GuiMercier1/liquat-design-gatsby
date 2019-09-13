@@ -24,6 +24,7 @@ function Topic(props) {
 
     const TopicTitle = styled.h5`
         margin-top: 0px;
+        text-align:left;
     `
 
     const links = props.topic.links.map((link, index) => {

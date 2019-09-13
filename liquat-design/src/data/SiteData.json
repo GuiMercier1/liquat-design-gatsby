@@ -39,17 +39,18 @@
             ],
             "projects": [
                 {
-                    "fr_title": "Mon portfolio",
+                    "fr_title": "Site portfolio",
                     "en_title": "My portfolio",
                     "imageSrc": "my_website.png",
                     "fr_shortDescription": "Création d'un site web pour présenter mes compétences, mon parcours et mes projets.",
                     "en_shortDescription": "Creation of a website to put forwards my skills, my journey and my projects.",
                     "fr_longDescription": "J'ai souhaité faire un site \"vendeur\", mais qui respecte mes valeurs et ma personnalité, à savoir l'humour, l'adaptabilité, la sociabilité, et d'autres que je vous laisse découvrir ici. J'ai relevé ce challenge de mêler le ludique et le sérieux et vous êtes seuls juges de sa réussite !<br /><br />J'ai appliqué ma stratégie UX (analyse des besoins, idéation, maquettes, feedbacks utilisateurs, ...) pour vous proposer une expérience utile - à vous comme à moi - et agréable.<br /><br />N'hésitez pas à me faire le moindre retour !",
                     "en_longDescription": "I wanted to make a \"self-marketing\" oriented website, but which respects my values and my personnality which are humor, adaptability, sociability and many more that I let you find out here. I took this challenge to mix fun and seriousness, and you will be the only judges of its success !<br /><br />I have applied my UX strategy (needs analysis, ideation, mockups, user feedbacks, ...) to offer you a usefull - for you as much as for me - and pleasant experience.<br /><br />Please contact me for any feedback !",
-                    "customer": "Vous / You",
-                    "company": "Moi-même / Myself",
-                    "id": "my_website",
+                    "customer": "Moi-même",
+                    "company": "Moi-même",
+                    "id": "developpement-ux-design-site-web-porftolio",
                     "opacity": 0.3,
+                    "date" : "2018-2019",
                     "tags": [
                         "UX-DESIGN",
                         "WEB-DEV",
@@ -104,7 +105,7 @@
                     "en_longDescription": "Following the \"wellness at work\" development at Inovans, we wanted to improve our internal tools for all the consultaNts.  So they could  keep contact with each other and with their manager  in order to enhance cohesion and avoid isolation. The first version has been plebiscited by our consultants as a reflect of our identity.",
                     "customer": "Inovans",
                     "company": "Inovans",
-                    "id": "inovapps",
+                    "id": "developpement-ux-design-inovapps-logiciel-web-sirh-qvt",
                     "opacity": 0.3,
                     "tags": [
                         "UX-DESIGN",
@@ -137,8 +138,8 @@
                         }
                     ],
                     "tools": [
-                        "Axure",
-                        "Taiga"
+                        "AXURE",
+                        "TAIGA"
                     ]
                 },
                 {
@@ -151,7 +152,7 @@
                     "en_longDescription": "The main goal was to reinvent our website to put forward our new digital offer and to reflect Inovans' identity for potential customers and candidates. Easter eggs included (!).",
                     "customer": "Inovans",
                     "company": "Inovans",
-                    "id": "digital-site",
+                    "id": "developpement-ux-design-site-inovans-digital",
                     "opacity": 0.3,
                     "tags": [
                         "WEB-DEV",
@@ -176,7 +177,7 @@
                         }
                     ],
                     "tools": [
-                        "Axure"
+                        "AXURE"
                     ]
                 },
                 {
@@ -189,12 +190,16 @@
                     "en_longDescription": "With the management team, we noted that some consultants may feel isolation and/or disappointment because of some dysfunctions. So along with the management team I created the concept of \"Draw Your Inovans\" and brought the mindset of UX Design to my colleagues in order to offer them the opportunity to co-create a company in which they would better fit in.",
                     "customer": "Inovans",
                     "company": "Inovans",
-                    "id": "draw-your-inovans",
+                    "id": "qvt-management-draw-your-inovans",
                     "opacity": 0.3,
                     "tags": [
                         "HAPPINESS"
                     ],
                     "tasks": [
+                        {
+                            "fr": "Design Thinking",
+                            "en": "Design Thinking"
+                        },
                         {
                             "fr": "Ateliers Speed Boat",
                             "en": "Speed Boat Workshops"
@@ -216,9 +221,7 @@
                             "en": "Team Building"
                         }
                     ],
-                    "tools": [
-                        "En cours d'écriture..."
-                    ]
+                    "tools": []
                 },
                 {
                     "fr_title": "Elektroscop",
@@ -230,7 +233,7 @@
                     "en_longDescription": "Elektroscop is a website that has been created for electronic music fans to find parties close to their location. We went hand in hand with their founders for the website design and the strategic positioning. Unfortunately the project never happened due to a lack of resources.",
                     "customer": "Elektroscop",
                     "company": "Freelance",
-                    "id": "elektroscop",
+                    "id": "ux-design-marketing-elektroscop-soirees-electro",
                     "opacity": 0.3,
                     "tags": [
                         "UX-DESIGN",
@@ -253,7 +256,7 @@
                         }
                     ],
                     "tools": [
-                        "Axure"
+                        "AXURE"
                     ]
                 },
                 {
@@ -266,7 +269,7 @@
                     "en_longDescription": "As a confirmed Splunk developer, I have always  been challenged to create  more dynamics and functional dashboards. I have been contacted to train the managers about this new potential through Splunk and its modularity.",
                     "customer": "GFI",
                     "company": "Inovans",
-                    "id": "splunk-formation",
+                    "id": "formation-splunk-dashboards",
                     "opacity": 0.3,
                     "tags": [
                         "UX-DESIGN",
@@ -301,9 +304,7 @@
                             "en": "UX Design initiation"
                         }
                     ],
-                    "tools": [
-                        "En cours d'écriture..."
-                    ]
+                    "tools": []
                 },
                 {
                     "fr_title": "Monitoring pour Airbus",
@@ -315,7 +316,7 @@
                     "en_longDescription": "In order to monitor some custom softwares, i.e able to affect a plane's and its annex systems' smooth functioning, Airbus has decided to monitor them with Splunk. Our team has been the first one to work on it and to create functional Splunk dashboards for Airbus. I had to push the limits of the classic Splunk interfaces, thanks to UX Design and Splunk's JS framework.",
                     "customer": "Airbus",
                     "company": "Inovans",
-                    "id": "splunk-airbus",
+                    "id": "developpement-ux-design-splunk-airbus",
                     "opacity": 0.3,
                     "tags": [
                         "UX-DESIGN",
@@ -340,8 +341,8 @@
                             "en": "Customers AND users' needs analysis"
                         },
                         {
-                            "fr": "Maquettage Axure",
-                            "en": "Mockups with Axure"
+                            "fr": "Maquettage AXURE",
+                            "en": "Mockups with AXURE"
                         },
                         {
                             "fr": "Analyse Big Data pour extraire de l'information pertinente",
@@ -356,9 +357,7 @@
                             "en": "Development of complexes and interactives Splunk dashboards"
                         }
                     ],
-                    "tools": [
-                        "En cours d'écriture..."
-                    ]
+                    "tools": []
                 },
                 {
                     "fr_title": "Lead Analytics",
@@ -370,7 +369,7 @@
                     "en_longDescription": "On the project manager’s demand, I have led a study on an existing software to identify the main usability issues. After the kick-off with customers, some heuristic evaluation and usability tests, I have led many brainstorming workshops to build the new mockups. Then, I developed a part of these interfaces in AngularJS.",
                     "customer": "Sycomore",
                     "company": "Freelance",
-                    "id": "lead-analytics",
+                    "id": "developpement-ux-design-lead-analytics",
                     "opacity": 0.3,
                     "tags": [
                         "UX-DESIGN",
@@ -421,7 +420,7 @@
                     "en_longDescription": "In reaction to a rising need, I have led a users' need analysis and brainstorming workshops to design a web app for the scientist to manage simply, and in a legislative framework, their laboratory's samples.",
                     "customer": "Sycomore",
                     "company": "Freelance",
-                    "id": "lead-sample",
+                    "id": "developpement-ux-design-lead-sample",
                     "opacity": 0.3,
                     "tags": [
                         "UX-DESIGN",
@@ -468,7 +467,7 @@
                     "en_longDescription": "Starting from a workmate POC (Proof Of Concept), the management wanted me to design from scratch this idea to create a marketable software. I have led as well technical studies about Lucène and ElasticSearch to put forward their abilities and confirm / invalidate potential features answering some identified needs. Then, I have led the front development team.",
                     "customer": "Sycomore",
                     "company": "Freelance",
-                    "id": "lead-catalog",
+                    "id": "developpement-ux-design-lead-catalog",
                     "opacity": 0.3,
                     "tags": [
                         "UX-DESIGN",
@@ -516,7 +515,7 @@
                     "en_longDescription": "As a new robot was on its way to reach Mars, I had to design and develop a POC (Proof Of Concept) to display the communication windows and data sent by the robot.",
                     "customer": "CNRS",
                     "company": "Capgemini",
-                    "id": "spatiale",
+                    "id": "developpement-ux-design-site-communication-robot-mars",
                     "opacity": 0.3,
                     "tags": [
                         "UX-DESIGN",
@@ -559,7 +558,7 @@
                     "en_longDescription": "I designed a tablet application to help negociations and mass purchases on international markets. The main challenge has been to offer breaking features suitable to an environment with a high cognitive solicitation level.",
                     "customer": "Confidentiel",
                     "company": "Capgemini",
-                    "id": "marketing",
+                    "id": "ux-design-logiciel-marches-internationaux",
                     "opacity": 0.3,
                     "tags": [
                         "UX-DESIGN"
@@ -582,10 +581,7 @@
                             "en": "User testing"
                         }
                     ],
-                    "tools": [
-                        "JustInMind",
-                        "En cours d'écriture..."
-                    ]
+                    "tools": ["JUSTINMIND"]
                 },
                 {
                     "fr_title": "Doctrines de l'Armée",
@@ -597,7 +593,7 @@
                     "en_longDescription": "The French Land Army has noticed that the website listing the doctrines wasn't used so far, because of a lack of usability. I have led a users' need study in order to build the new mockups which allows the soldiers to access quickly to doctrines which suits the situation they are implied in.",
                     "customer": "Armée de Terre",
                     "company": "Capgemini",
-                    "id": "doctrines",
+                    "id": "ux-design-site-web-doctrines-armee",
                     "opacity": 0.3,
                     "tags": [
                         "UX-DESIGN"
@@ -616,9 +612,7 @@
                             "en": "User testing"
                         }
                     ],
-                    "tools": [
-                        "En cours d'écriture..."
-                    ]
+                    "tools": []
                 },
                 {
                     "fr_title": "I-Care",
@@ -630,7 +624,7 @@
                     "en_longDescription": "Efficiencia wanted to provide a user-friendly way to anyone to access its energy consumption forcasting engine, in order to educate people to a better home energy consumption. I have led a long study about the persuasive applications (particularly with the B.J Fogg pattern), the Serious Gaming and the e-learning. So I have designed a game for tablets in which the users could try home configurations (e.g. \"I turn down the heating when I am out of home\", \"I close my shutters during daylight\", etc) and check their home consumption's level at the end of the day. I deloped as well a POC (Proof Of Concept), but the project stopped because of a lack of investors.",
                     "customer": "Efficiencia",
                     "company": "Efficiencia",
-                    "id": "i-care",
+                    "id": "ux-design-icare-gestion-consommation-energetique",
                     "opacity": 0.3,
                     "tags": [
                         "UX-DESIGN",
@@ -666,9 +660,7 @@
                             "en": "Development of a POC in Java"
                         }
                     ],
-                    "tools": [
-                        "En cours d'écriture..."
-                    ]
+                    "tools": []
                 },
                 {
                     "fr_title": "PIXEE",
@@ -680,7 +672,7 @@
                     "en_longDescription": "The Efficiencia's energy consumption forcasting engine needs specific data on the focused building. I started identifying the necessary data thanks to a close collaboration with a thermic engineering company and a building's thermics researcher, then I have designed an interface to input data as simply as possible which respects the huge environmental constraints of the users.",
                     "customer": "Efficiencia",
                     "company": "Efficiencia",
-                    "id": "pixee",
+                    "id": "ux-design-pixee-saisie-thermique-batiments",
                     "opacity": 0.3,
                     "tags": [
                         "UX-DESIGN"
@@ -703,9 +695,7 @@
                             "en": "Mockups with Balsamiq"
                         }
                     ],
-                    "tools": [
-                        "En cours d'écriture..."
-                    ]
+                    "tools": []
                 },
                 {
                     "fr_title": "NAIAD",
@@ -717,7 +707,7 @@
                     "en_longDescription": "The Efficiencia's energy consumption forcasting engine produces very complex data. So I had to identify the main users, mesure their understanding of this kind of data to design interfaces which display concise and useful data.",
                     "customer": "Efficiencia",
                     "company": "Efficiencia",
-                    "id": "naiad",
+                    "id": "developpement-ux-design-visualisation-consommation-energetique-batiments",
                     "opacity": 0.3,
                     "tags": [
                         "UX-DESIGN",
@@ -746,9 +736,7 @@
                             "en": "Mockups with Balsamiq"
                         }
                     ],
-                    "tools": [
-                        "En cours d'écriture..."
-                    ]
+                    "tools": []
                 },
                 {
                     "fr_title": "IntuiFace",
@@ -760,7 +748,7 @@
                     "en_longDescription": "To provide new possibilities to the Intuiface's users, I implemented a physic engine to add inertia and/or gravity to the Intuiface's components. The main challenge has been to transform the complex results of the Box2DJS into CSS3 matrix. At the end of the project, to show the power of the new engine, I achieved to implement within Intuiface an \"Angry Birds\"-like game.",
                     "customer": "IntuiFace",
                     "company": "IntuiFace",
-                    "id": "intuiface",
+                    "id": "developpement-moteur-physique-intuiface-multitouch",
                     "opacity": 0.3,
                     "tags": [
                         "UX-DESIGN",
@@ -784,9 +772,7 @@
                             "en": "Understanding and manipulation of the CSS3 matrix transformations"
                         }
                     ],
-                    "tools": [
-                        "En cours d'écriture..."
-                    ]
+                    "tools": []
                 },
                 {
                     "fr_title": "Ubiloop",
@@ -798,7 +784,7 @@
                     "en_longDescription": "",
                     "customer": "e-Citiz",
                     "company": "Université Paul Sabatier",
-                    "id": "ubiloop",
+                    "id": "ux-design-declaration-incidents-voie-publique",
                     "opacity": 0.3,
                     "tags": [
                         "UX-DESIGN",
@@ -821,34 +807,6 @@
                     "tools": [
                         "MOCKFLOW",
                         "WORDPRESS"
-                    ]
-                },
-                {
-                    "fr_title": "Un besoin ?",
-                    "en_title": "Any need ?",
-                    "imageSrc": "workshop.jpg",
-                    "fr_shortDescription": "Discutons ensemble de vos besoins et ajoutons votre projet à cette liste !",
-                    "en_shortDescription": "Let's talk together about your needs, and add your project to this list !",
-                    "fr_longDescription": "N'hésitez pas à me contacter pour n'importe quel besoin. Ma faculté d'adaptation professionnelle et sociale m'a permis de travailler sur des projets très variés dans des contextes parfois compliqués. Que vous ayez envie de redonner de la pêche à votre équipe, que vous souhaitiez assurer un projet complexe, ou que vous souhaitez concevoir et développer des applications innovantes... Parlons-en !",
-                    "en_longDescription": "Please feel free to contact me for any need. My ability to adapt in professionnal and social contexts allowed me to work on very variable - and sometimes complex - fields. Whether you feel like boosting your team, managing a complex project or designing and developing innovative applications... Let's talk about it !",
-                    "customer": "Vous",
-                    "company": "Nous ?",
-                    "id": "you",
-                    "opacity": 0.3,
-                    "tags": [
-                        "UX-DESIGN",
-                        "PROJECT-MANAGEMENT",
-                        "HAPPINESS",
-                        "MARKETING"
-                    ],
-                    "tasks": [
-                        {
-                            "fr": "Définissons-les ensemble !",
-                            "en": "Let's build some together !"
-                        }
-                    ],
-                    "tools": [
-                        "En cours d'écriture..."
                     ]
                 }
             ]
@@ -894,7 +852,7 @@
                     "fr_longDescription": "Des campings de luxe proposant un système de réservation de vacances par téléphone voulaient rendre leurs interfaces plus fluides pour leurs opérateurs. ",
                     "customer": "CToutVert",
                     "company": "CToutVert",
-                    "id": "ctv1",
+                    "id": "ux-design-interface-callcenter-tourisme",
                     "opacity": 0.3,
                     "tasks": [
                         {
@@ -907,15 +865,13 @@
                             "fr": "Tests avec les opérateurs sur l’interface existante"
                         },
                         {
-                            "fr": "Conception d’une nouvelle interface (sur le logiciel Axure)"
+                            "fr": "Conception d’une nouvelle interface (sur le logiciel AXURE)"
                         },
                         {
                             "fr": "Tests de l’interface avec les opérateurs selon des scénarios d’appels classiques et hors norme"
                         }
                     ],
-                    "tools": [
-                        "En cours d'écriture..."
-                    ],
+                    "tools": [],
                     "tags": []
                 },
                 {
@@ -924,8 +880,8 @@
                     "fr_shortDescription": "Refonte de l’interface d’administration de campings",
                     "fr_longDescription": "L’interface d'administration pour les gérants de campings était vieillissante et de nombreuses fonctionnalités avaient été rajouté au fil du temps sans réelle réflexion sur la logique d’utilisation. Les gérants n’étant pas disponibles le travail de refonte a été fait avec l’appui des opératrices de la hotline qui utilisent l’interface pour configurer les informations lorsque les gérants ne souhaitent pas le faire eux-mêmes.",
                     "customer": "CToutVert",
-                    "company": "CtoutVert",
-                    "id": "ctv2",
+                    "company": "CToutVert",
+                    "id": "ux-design-interface-administration-campings",
                     "opacity": 0.3,
                     "tasks": [
                         {
@@ -938,15 +894,13 @@
                             "fr": "Card sorting avec les opératrices de la hotline pour générer une nouvelle architecture de l’interface"
                         },
                         {
-                            "fr": "Conception de maquettes de l’interface (sur le logiciel Axure)"
+                            "fr": "Conception de maquettes de l’interface (sur le logiciel AXURE)"
                         },
                         {
                             "fr": "Validation de la structure et des fonctions de la nouvelle interface avec les opératrices de la hotline"
                         }
                     ],
-                    "tools": [
-                        "En cours d'écriture..."
-                    ],
+                    "tools": [],
                     "tags": []
                 },
                 {
@@ -956,7 +910,7 @@
                     "fr_longDescription": "Les concepteurs de l’application avaient besoin d’avoir une vision fidèle de l’activité des techniciens Orange (et sous traitant) pour proposer des fonctionnalités pertinentes.",
                     "customer": "Orange",
                     "company": "Human Design Group",
-                    "id": "HDG2",
+                    "id": "ux-design-interface-techniciens-orange",
                     "opacity": 0.3,
                     "tasks": [
                         {
@@ -969,9 +923,7 @@
                             "fr": "Formalisation de leur activité sous forme d’une expérience map"
                         }
                     ],
-                    "tools": [
-                        "En cours d'écriture..."
-                    ],
+                    "tools": [],
                     "tags": []
                 },
                 {
@@ -981,7 +933,7 @@
                     "fr_longDescription": "En vue d’une automatisation des tâches les chefs de projets souhaitaient un moyen d’évaluer quelles tâches devaient être conservées, lesquelles pouvaient être automatisées, lesquelles étaient considérées comme rébarbatives...",
                     "customer": "Orange",
                     "company": "Orange",
-                    "id": "Orange",
+                    "id": "ux-design-charge-travail-orange",
                     "opacity": 0.3,
                     "tasks": [
                         {
@@ -994,9 +946,7 @@
                             "fr": "Création et tests de la grille auprès des postes de travail choisis"
                         }
                     ],
-                    "tools": [
-                        "En cours d'écriture..."
-                    ],
+                    "tools": [],
                     "tags": []
                 },
                 {
@@ -1006,7 +956,7 @@
                     "fr_longDescription": "L’armée de terre souhaitait de nouveaux véhicules pour ses armées et voulaient les doter de nouvelles technologies pour les rendre plus sécuritaires et performants.",
                     "customer": "Direction Générale de l'Armement",
                     "company": "UTBM",
-                    "id": "UTBM",
+                    "id": "ux-design-technologies-vehicules-militaires",
                     "opacity": 0.3,
                     "tasks": [
                         {
@@ -1022,9 +972,7 @@
                             "fr": "Participation aux Technodays de Thales pour faire tester des technologies à un groupe de militaires"
                         }
                     ],
-                    "tools": [
-                        "En cours d'écriture..."
-                    ],
+                    "tools": [],
                     "tags": []
                 },
                 {
@@ -1034,7 +982,7 @@
                     "fr_longDescription": "Elektroscop est un site créé pour permettre aux fans de musique électronique de trouver des soirées à proximité. Nous avons accompagné leurs créateurs pour le design de leur site et leur positionnement stratégique.",
                     "customer": "Elektroscop",
                     "company": "Freelance",
-                    "id": "elektroscop",
+                    "id": "ux-design-marketing-site-elektroscop-soirees-electro",
                     "opacity": 0.3,
                     "tasks": [
                         {
@@ -1050,9 +998,7 @@
                             "en": "Market audit"
                         }
                     ],
-                    "tools": [
-                        "En cours d'écriture..."
-                    ],
+                    "tools": [],
                     "tags": []
                 }
             ]
@@ -1174,6 +1120,18 @@
         {
             "id": "JAMSTACK",
             "name": "JAMstack"
+        },
+        {
+            "id": "TAIGA",
+            "name": "Taiga"
+        },
+        {
+            "id": "AXURE",
+            "name": "Axure"
+        },
+        {
+            "id": "JUSTINMIND",
+            "name": "JustInMind"
         }
     ]
 }

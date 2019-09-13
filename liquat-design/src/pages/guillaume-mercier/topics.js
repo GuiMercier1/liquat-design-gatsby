@@ -161,7 +161,7 @@ function Topics() {
       <div className="section">
         <div className="container">
 
-          <div className="row no-bottom">
+          <div className="row no-bottom center-align">
             <h1 className="page-head-sub-title colored-title">Inspirations</h1>
             <p>Voici une liste de sujets qui m'inspirent, et vu que d'autres en parlent mieux que moi je vous propose une sélection des meilleurs articles à ce sujet !</p>
           </div>

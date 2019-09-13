@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import * as emailjs from 'emailjs-com';
@@ -159,7 +158,7 @@ const ContactForm = props => {
     /* STYLING COMPONENTS */
     const CenterWrapper = styled.div`
     text-align: center;
-  `
+    `
 
     return (
         <>

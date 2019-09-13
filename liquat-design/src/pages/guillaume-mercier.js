@@ -173,7 +173,7 @@ const GuillaumeMercier = props => {
   const projectsToDisplay = projects.slice(0, 3).map((project) => {
 
     //TODO ADD RANDOM
-    return <ProjectCard key={"project_" + project.id} project={project}></ProjectCard>;
+    return <ProjectCard key={"project_" + project.id} project={project} talentData={props.talentData}></ProjectCard>;
   });
 
   const { mainPhoto } = useMainPicture();

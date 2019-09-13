@@ -74,7 +74,7 @@ const Portfolio = props => {
 
     // If no filters provided
     if (filters.length === 0) {
-      return projects.map(project => <ProjectCard key={"project_" + project.id} project={project}></ProjectCard>);
+      return projects.map(project => <ProjectCard key={"project_" + project.id} project={project} talentData={props.talentData}></ProjectCard>);
     }
 
     // If all filters are inactive => All projects must be displayed
@@ -111,7 +111,7 @@ const Portfolio = props => {
         <div className="container">
           <div className="row">
             <div className="col s12">
-              <h1 className="page-head-sub-title colored-title">
+              <h1 className="page-head-sub-title colored-title center-align">
                 <span>Portfolio ({projectsCards.length})</span>
               </h1>
             </div>

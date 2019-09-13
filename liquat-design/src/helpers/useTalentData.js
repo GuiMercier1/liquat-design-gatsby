@@ -58,6 +58,9 @@ const useTalentData = props => {
                     fluid {
                       ...GatsbyImageSharpFluid
                     }
+                    fixed(height:200) {
+                      ...GatsbyImageSharpFixed
+                    }
                   }
                   base
                 }

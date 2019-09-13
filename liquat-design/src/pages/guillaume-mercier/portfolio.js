@@ -85,7 +85,7 @@ const Portfolio = props => {
         if (filterIndex !== -1) mustBeDisplayed = true;
       });
 
-      if (mustBeDisplayed) projectsReduced.push(<ProjectCard key={"project_" + project.id} project={project}></ProjectCard>);
+      if (mustBeDisplayed) projectsReduced.push(<ProjectCard key={"project_" + project.id} project={project} talentData={props.talentData}></ProjectCard>);
 
       return projectsReduced;
     }, []);
@@ -98,7 +98,7 @@ const Portfolio = props => {
         <div className="container">
           <div className="row">
             <div className="col s12">
-              <h1 className="page-head-sub-title colored-title">
+              <h1 className="page-head-sub-title colored-title center-align">
                 <span>Portfolio ({projectsCards.length})</span>
               </h1>
             </div>
