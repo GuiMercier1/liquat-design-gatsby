@@ -151,7 +151,7 @@ class Experiences extends React.Component {
             <div className="row">
               <div className="col s12 center">
                 <a className="waves-effect waves-light btn colored-button"
-                  href="../../files/CV_Guillaume_Mercier.pdf" download>
+                  href={'/CV_Guillaume_Mercier.pdf'} download>
                   <i className="material-icons left">cloud_download</i><span>Mon CV (PDF)</span>
                 </a>
               </div>
@@ -179,6 +179,6 @@ class Experiences extends React.Component {
 
 export default props => (
   <Layout>
-    <Experiences {...props}/>
+    <Experiences {...props} />
   </Layout>
 )

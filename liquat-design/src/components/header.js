@@ -28,8 +28,7 @@ const Header = props => {
   const brand = talentData.logoInitials;
   const homeLink = talentData.homeLink;
   const links = talentData.links;
-  const contactLink = talentData.contactLink;
-  const mail = talentData.mail;
+  const mails = talentData.mails;
   const fullName = talentData.fullName;
   const jobLine = talentData.jobLine;
 
@@ -50,6 +49,14 @@ const Header = props => {
         <Link to={link.link} className="sidenav-close menu-link">{link.title}</Link>
       </li>
     );
+  });
+
+  const mailList = mails.map(({ mail, link }) => {
+    return <p key="{link}"><Link to={link} className="sidenav-close orange-link">{mail}</Link></p>
+  });
+
+  const jobLineList = jobLine.map((job,index) => {
+    return <p key={"job_"+index}>{job}</p>;
   });
 
   const BurgerIcon = styled.i`
@@ -77,8 +84,8 @@ const Header = props => {
         {mobileLinks}
         <DarkStyledSidenav className="navbar-footer">
           <p>{fullName}</p>
-          <p>{jobLine}</p>
-          <p><Link to={contactLink} className="orange-link">{mail}</Link></p>
+          {jobLineList}
+          {mailList}
         </DarkStyledSidenav>
       </StyledSidenav>
     </header >

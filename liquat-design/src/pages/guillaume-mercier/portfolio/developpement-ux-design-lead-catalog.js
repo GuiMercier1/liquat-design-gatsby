@@ -6,7 +6,7 @@ import ArticleLayout from "../../../components/articleLayout"
 const Article = props => {
 
     return (
-        <></>
+        <a href={'https://sycomore-tech.com/nos-solutions/lead-catalog/'} target="_blank" rel="noopener noreferrer">Site de Lead Catalog</a>
     );
 }
 

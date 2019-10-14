@@ -86,7 +86,7 @@ class Experiences extends React.Component {
             <div className="row">
               <div className="col s12 center">
                 <a className="waves-effect waves-light btn colored-button"
-                  href="../../files/CV_UX_Designer_Alice_Foissy.pdf" download>
+                  href={'/CV_UX_Designer_Alice_Foissy.pdf'} download>
                   <i className="material-icons left">cloud_download</i><span>Mon CV (PDF)</span>
                 </a>
               </div>

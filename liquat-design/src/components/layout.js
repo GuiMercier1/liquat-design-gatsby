@@ -38,11 +38,9 @@ const Layout = props => {
 
   let focusedTalent;
 
-  if (props.location.pathname.startsWith("/guillaume-mercier")) focusedTalent = TALENTS.GUILLAUME;
-  else if (props.location.pathname.startsWith("/alice-foissy")) focusedTalent = TALENTS.ALICE;
+  if (props.location.pathname.includes("/guillaume-mercier")) focusedTalent = TALENTS.GUILLAUME;
+  else if (props.location.pathname.includes("/alice-foissy")) focusedTalent = TALENTS.ALICE;
   else focusedTalent = TALENTS.LIQUAT;
-
-  console.log(props.location.pathname);
 
   const { talentData } = useTalentData({ talent: focusedTalent });
 

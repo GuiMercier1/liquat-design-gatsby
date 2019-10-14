@@ -6,9 +6,10 @@ import ArticleLayout from "../../../components/articleLayout"
 const Article = props => {
 
     return (
-        <></>
+        <a href={'https://sycomore-tech.com/nos-solutions/lead-sample/'} target="_blank" rel="noopener noreferrer">Site de Lead Sample</a>
     );
 }
+
 
 export default props => (
     <Layout>

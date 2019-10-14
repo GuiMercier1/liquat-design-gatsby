@@ -25,7 +25,7 @@ const useMainPicture = () => {
   const { mainPhoto } = useStaticQuery(
     graphql`
       query AliceFoissyQuery {
-        mainPhoto: file(relativePath: { eq: "photo-alice-foissy.jpg" }) {
+        mainPhoto: file(relativePath: { eq: "photo-alice-foissy2.jpg" }) {
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid
@@ -171,7 +171,7 @@ const AliceFoissy = props => {
 
   return (
     <>
-      <SEO title="Accueil" />
+      <SEO title="Alice-Anne Foissy - Psychologue | UX Designer" />
       <div className="section valign-wrapper about-section">
         <div className="container">
           {/* <!-- Only for mobiles --> */}

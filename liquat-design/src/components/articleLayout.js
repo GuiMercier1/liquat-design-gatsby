@@ -16,18 +16,20 @@ const ArticleLayout = props => {
     const nextProjectID = projectIndex === projects.length - 1 ? projects[0].id : projects[projectIndex + 1].id;
     const baseURL = props.talentData.homeLink + "/portfolio/";
 
-    const childrenWithProjectData = React.cloneElement(props.children, { project: project });
+    let childrenWithProjectData;
+
+    if (props.children) childrenWithProjectData = React.cloneElement(props.children, { project: project });
 
     function Tasks(props) {
         if (props.tasks.length === 0) return <></>;
         else {
             const taskList = props.tasks.map(task => {
-                return <li key={encodeURI(task.fr)}>{task.fr}</li>;
+                return <li className="browser-default" key={encodeURI(task.fr)}>{task.fr}</li>;
             });
             return (
                 <>
-                    <MarginedHeader>Tâches (<a href="https://fr.wiktionary.org/wiki/tl;dr" target="_blank" rel="noopener noreferrer">tl;dr</a>)</MarginedHeader>
-                    <ul>{taskList}</ul>
+                    <MarginedHeader>Tâches</MarginedHeader>
+                    <ul className="browser-default">{taskList}</ul>
                 </>);
         }
     }
@@ -35,7 +37,6 @@ const ArticleLayout = props => {
     function Tools(props) {
         if (props.tools.length === 0) return <></>;
         else {
-            console.log(props.tools);
             const toolsList = props.tools.map(tool => {
                 return <li key={tool.id}>{tool.name}</li>;
             });
@@ -102,6 +103,14 @@ const ArticleLayout = props => {
         margin-right:20px;
     `
 
+    if (childrenWithProjectData) {
+        childrenWithProjectData =
+            <>
+                <MarginedHeader>Plus en détail</MarginedHeader>
+                <>{childrenWithProjectData}</>
+            </>
+    }
+
     return (
         <>
             <SEO title={project.fr_title} />
@@ -124,12 +133,12 @@ const ArticleLayout = props => {
                         <Tools tools={project.tools}></Tools>
                         <MarginedHeader>Contexte</MarginedHeader>
                         <Administrative project={project}></Administrative>
+                        {childrenWithProjectData}
                         <ButtonDiv>
                             <PreviousButton className="btn" to={baseURL + previousProjectID}>Précédent</PreviousButton>
                             <Link className="btn" to={baseURL + nextProjectID}>Suivant</Link>
                         </ButtonDiv>
                     </div>
-                    {childrenWithProjectData}
                 </div>
             </div>
         </>

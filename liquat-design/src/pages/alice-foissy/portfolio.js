@@ -106,7 +106,7 @@ const Portfolio = props => {
 
   return (
     <>
-      <SEO title="Portfolio" />
+      <SEO title="Portfolio"/>
       <div className="section">
         <div className="container">
           <div className="row">

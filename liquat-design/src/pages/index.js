@@ -18,7 +18,7 @@ const useMainPictures = () => {
             }
           }
         },
-        photoAlice: file(relativePath: { eq: "photo-alice-foissy.jpg" }) {
+        photoAlice: file(relativePath: { eq: "photo-alice-foissy2.jpg" }) {
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid
@@ -82,7 +82,7 @@ const IndexPage = () => {
 
   return (
     <>
-      <SEO title="Home" />
+      <SEO title="Accueil" />
       <div className="page-content">
         <div className="row">
           <div className="col center-align s12">

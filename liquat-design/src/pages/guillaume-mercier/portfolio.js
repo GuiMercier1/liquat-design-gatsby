@@ -35,6 +35,8 @@ const Portfolio = props => {
   function setActiveFiltersFromURL() {
     const filtersInUrl = getQueryObject(props.location.search).filter;
 
+    console.log(filtersInUrl);
+
     if (filtersInUrl === undefined) return;
 
     if (typeof filtersInUrl === 'string') {
@@ -93,7 +95,7 @@ const Portfolio = props => {
 
   return (
     <>
-      <SEO title="Portfolio" />
+      <SEO title="Portfolio" /*canonical="guillaume-mercier/portfolio"*/ />
       <div className="section">
         <div className="container">
           <div className="row">

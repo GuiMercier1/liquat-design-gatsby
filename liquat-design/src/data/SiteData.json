@@ -6,11 +6,18 @@
             "darkColor": "#3D3B67",
             "veryDarkColor": "#282467",
             "logoInitials": "G.M.",
-            "mail": "gui.mercier1@gmail.com",
+            "mails": [
+                {
+                    "mail": "gui.mercier1@gmail.com",
+                    "link": "/guillaume-mercier/contact"
+                }
+            ],
             "homeLink": "/guillaume-mercier",
             "contactLink": "/guillaume-mercier/contact",
             "fullName": "Guillaume Mercier",
-            "jobLine": "UX - Dev - Management",
+            "jobLine": [
+                "UX - Dev - Management"
+            ],
             "links": [
                 {
                     "title": "Accueil",
@@ -50,7 +57,7 @@
                     "company": "Moi-même",
                     "id": "developpement-ux-design-site-web-porftolio",
                     "opacity": 0.3,
-                    "date" : "2018-2019",
+                    "date": "2018-2019",
                     "tags": [
                         "UX-DESIGN",
                         "WEB-DEV",
@@ -581,7 +588,9 @@
                             "en": "User testing"
                         }
                     ],
-                    "tools": ["JUSTINMIND"]
+                    "tools": [
+                        "JUSTINMIND"
+                    ]
                 },
                 {
                     "fr_title": "Doctrines de l'Armée",
@@ -817,11 +826,19 @@
             "darkColor": "#023A36",
             "veryDarkColor": "#023A36",
             "logoInitials": "A.F.",
-            "mail": "alice.foissy@gmail.com",
+            "mails": [
+                {
+                    "mail": "alice.foissy@gmail.com",
+                    "link": "/alice-foissy/contact"
+                }
+            ],
             "homeLink": "/alice-foissy",
             "contactLink": "/alice-foissy/contact",
             "fullName": "Alice-Anne Foissy",
-            "jobLine": "UX Designer",
+            "jobLine": [
+                "Psychologue",
+                "UX Designer"
+            ],
             "links": [
                 {
                     "title": "Accueil",
@@ -1010,10 +1027,21 @@
             "veryDarkColor": "#0B4758",
             "logoInitials": "L.D.",
             "homeLink": "/",
-            "mail": "gui.mercier1@gmail.com",
-            "contactLink": "/guillaume-mercier/contact",
+            "mails": [
+                {
+                    "mail": "gui.mercier1@gmail.com",
+                    "link": "/guillaume-mercier/contact"
+                },
+                {
+                    "mail": "alice.foissy@gmail.com",
+                    "link": "/alice-foissy/contact"
+                }
+            ],
+            "contactLink": "/contact",
             "fullName": "Liquat Design",
-            "jobLine": "UX - Dev - Management",
+            "jobLine": [
+                "Solutions digitales"
+            ],
             "links": [
                 {
                     "title": "Accueil",
@@ -1029,7 +1057,7 @@
                 },
                 {
                     "title": "Contact",
-                    "link": "/guillaume-mercier/contact"
+                    "link": "/contact"
                 }
             ]
         }

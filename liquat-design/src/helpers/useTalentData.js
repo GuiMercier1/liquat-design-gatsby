@@ -13,7 +13,10 @@ const useTalentData = props => {
                 veryDarkColor
                 id
                 logoInitials
-                mail
+                mails {
+                  mail
+                  link
+                }
                 homeLink
                 contactLink
                 fullName
@@ -58,7 +61,7 @@ const useTalentData = props => {
                     fluid {
                       ...GatsbyImageSharpFluid
                     }
-                    fixed(height:200) {
+                    fixed(height:180) {
                       ...GatsbyImageSharpFixed
                     }
                   }

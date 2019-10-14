@@ -180,7 +180,7 @@ const GuillaumeMercier = props => {
 
   return (
     <>
-      <SEO title="Accueil" />
+      <SEO title="Guillaume Mercier - UX | Web Dev | Digital" />
       <div className="section valign-wrapper about-section">
         <div className="container">
           {/* <!-- Only for mobiles --> */}
@@ -303,6 +303,6 @@ const GuillaumeMercier = props => {
 
 export default props => (
   <Layout>
-    <GuillaumeMercier {...props}/>
+    <GuillaumeMercier {...props} />
   </Layout>
 )

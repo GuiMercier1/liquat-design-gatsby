@@ -139,7 +139,7 @@ function Footer(props) {
         <div className="col s12 m4">
           <h4 className="white-text">Votre avis nous intéresse</h4>
           <p className="grey-text text-lighten-4 spaced-text">
-            Si vous êtes ici, ce site devrait être conçu pour répondre à vos attentes. Satisfait ou pas, je serais heureux d'avoir votre retour, n'hésitez pas à nous envoyer <a className="orange-link" href="/contact" target="_blank" rel="noopener noreferrer">un mail</a>.
+            Si vous êtes ici, ce site devrait être conçu pour répondre à vos attentes. Satisfait ou pas, nous serons heureux d'avoir votre retour, n'hésitez pas à nous envoyer <a className="orange-link" href="/contact" target="_blank" rel="noopener noreferrer">un mail</a>.
         </p>
         </div>
       </>

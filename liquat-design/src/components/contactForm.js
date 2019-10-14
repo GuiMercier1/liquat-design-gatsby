@@ -27,8 +27,6 @@ const ContactForm = props => {
             emailTemplate = "template_ciR8ayRa";
     }
 
-    console.log(emailID);
-
     const [formData, setFormData] = useState({
         name:
         {
@@ -157,7 +155,7 @@ const ContactForm = props => {
 
     /* STYLING COMPONENTS */
     const CenterWrapper = styled.div`
-    text-align: center;
+        text-align: center;
     `
 
     return (
