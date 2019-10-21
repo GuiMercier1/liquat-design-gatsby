@@ -46,6 +46,11 @@ const ContactForm = props => {
             isValid: false,
             class: ""
         },
+        sendBackupMail: {
+            value: false,
+            isValid: true,
+            class: ""
+        },
         captcha:
         {
             value: "",
@@ -54,6 +59,8 @@ const ContactForm = props => {
     });
 
     const [isFormValid, setIsFormValid] = useState(false);
+    const [stopSubmit, setStopSubmit] = useState(false);
+    const [submitText, setSubmitText] = useState("ENVOYER");
 
     const recaptchaRef = React.createRef();
 
@@ -65,8 +72,8 @@ const ContactForm = props => {
     // For features which must be executed for every update
     useEffect(() => {
 
-        const isFormValid = !Object.values(formData).some(formInput => {
-            return formInput.isValid === false;
+        const isFormValid = !Object.entries(formData).some(formElement => {
+            return formElement[1].isValid === false;
         });
 
         setIsFormValid(isFormValid);
@@ -79,6 +86,8 @@ const ContactForm = props => {
                 return value !== "";
             case "email":
                 return validateEmail(value);
+            case "sendBackupMail":
+                return true;
             default:
                 console.error("Unknown input type");
                 return false;
@@ -91,22 +100,25 @@ const ContactForm = props => {
     }
 
     const handleInputChange = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
 
         const target = event.target;
         const name = target.name;
-        const value = target.value;
+
+        const value = target.type === 'checkbox' ? target.checked : target.value;
 
         const isValid = isInputValid(name, value);
         const className = isValid ? "valid" : "invalid";
 
+        const newFormObject = {
+            value: value,
+            isValid: isValid,
+            class: className
+        };
+
         setFormData(prevFormData => ({
             ...prevFormData,
-            [name]: {
-                value: value,
-                isValid: isValid,
-                class: className
-            }
+            [name]: newFormObject
         }));
     }
 
@@ -133,14 +145,26 @@ const ContactForm = props => {
     const sendMail = (event) => {
         event.preventDefault();
         console.log("Sending ...");
+        setStopSubmit(true);
+        setSubmitText("ENVOI EN COURS...");
 
         window.M.toast({ html: "Envoi en cours ...", classes: "info-toastr" });
 
-        emailjs.sendForm(emailID, emailTemplate, '#contact-form')
+        const emailTemplateParams = {
+            email: formData.email.value,
+            name: formData.name.value,
+            message: formData.name.value,
+            "g-recaptcha-response": formData.captcha.value
+        };
+
+        if (formData.sendBackupMail.value === true) emailTemplateParams.backupMail = formData.email.value;
+
+        emailjs.send(emailID, emailTemplate, emailTemplateParams)
             .then(function (response) {
                 window.M.toast({ html: "Message envoyé !", classes: "success-toastr" });
                 // Then we clean the form
                 console.log('SUCCESS!', response.status, response.text);
+                setSubmitText("MESSAGE ENVOYE");
             }, function (error) {
                 if (error.status === 400) {
                     window.M.toast({ html: "Une erreur est survenue. Avez-vous confirmé que vous n'êtes pas un robot ?", classes: "error-toastr" });
@@ -149,6 +173,9 @@ const ContactForm = props => {
                     window.M.toast({ html: "Une erreur est survenue. Contactez-moi directement sur mon adresse mail.", classes: "error-toastr" });
                 }
 
+                setStopSubmit(false);
+                setSubmitText("ENVOYER");
+                
                 console.log('FAILED...', error);
             });
     };
@@ -195,15 +222,23 @@ const ContactForm = props => {
                             </div>
                         </div>
                         <div className="row">
+                            <div className="input-field col s12 m6 offset-m3">
+                                <label>
+                                    <input name="sendBackupMail" id="sendBackupMail" type="checkbox" value={formData.sendBackupMail.value} checked={formData.sendBackupMail.value} onChange={handleInputChange} />
+                                    <span htmlFor="sendBackupMail">Recevoir une copie du mail</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div className="row">
                             <div className="input-field col s12 m6 offset-m3 mail-input center-align">
                                 <ReCaptcha className="g-recaptcha" ref={recaptchaRef} sitekey="6Lc-g7AUAAAAAAu219Ijm2c2m49vxwylqWfoh02m" onChange={onCaptchaChange} onErrored={onCaptchaErrored} onExpired={onCaptchaExpired}></ReCaptcha>
                             </div>
                         </div>
                         <div className="row">
                             <CenterWrapper className="input-field col s12 m6 offset-m3 mail-input">
-                                <button className="btn waves-effect waves-light btn-large" type="submit" name="action" onClick={sendMail} disabled={!isFormValid}>
-                                    Envoyer
-                  <i className="material-icons right">send</i>
+                                <button className="btn waves-effect waves-light btn-large" type="submit" name="action" onClick={sendMail} disabled={!isFormValid || stopSubmit}>
+                                    {submitText}
+                                    <i className="material-icons right">send</i>
                                 </button>
                             </CenterWrapper>
                         </div>

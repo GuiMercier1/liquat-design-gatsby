@@ -35,8 +35,6 @@ const Portfolio = props => {
   function setActiveFiltersFromURL() {
     const filtersInUrl = getQueryObject(props.location.search).filter;
 
-    console.log(filtersInUrl);
-
     if (filtersInUrl === undefined) return;
 
     if (typeof filtersInUrl === 'string') {

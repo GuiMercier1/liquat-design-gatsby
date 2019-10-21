@@ -55,8 +55,8 @@ const Header = props => {
     return <p key="{link}"><Link to={link} className="sidenav-close orange-link">{mail}</Link></p>
   });
 
-  const jobLineList = jobLine.map((job,index) => {
-    return <p key={"job_"+index}>{job}</p>;
+  const jobLineList = jobLine.map((job, index) => {
+    return <p key={"job_" + index}>{job}</p>;
   });
 
   const BurgerIcon = styled.i`

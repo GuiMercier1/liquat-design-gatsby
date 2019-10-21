@@ -48,7 +48,7 @@ const Layout = props => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} talentData={talentData} />
+      <Header siteTitle={data.site.siteMetadata.title} talentData={talentData} location={props.location} />
       <main className="page-content">{childrenWithTalentData}</main>
       <Footer talentData={talentData} />
     </>

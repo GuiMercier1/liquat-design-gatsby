@@ -161,11 +161,11 @@ const AliceFoissy = props => {
   const projects = talentData.projects;
 
   // We only display 3 cards
-  const projectsToDisplay = projects.slice(0, 3).map((project) => {
+  const shuffledList = projects.sort(() => 0.5 - Math.random());
 
-    //TODO ADD RANDOM
-    return <ProjectCard key={"project_" + project.id} project={project} talentData={props.talentData}></ProjectCard>;
-  });
+  const projectsToDisplay = shuffledList.slice(0, 3).map((project) =>
+    <ProjectCard key={"project_" + project.id} project={project} talentData={props.talentData}></ProjectCard>
+  );
 
   const { mainPhoto } = useMainPicture();
 

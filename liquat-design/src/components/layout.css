@@ -338,6 +338,10 @@ hr.rule {
   cursor: pointer;
 }
 
+.filter:hover {
+  background-color: #282467;
+}
+
 .filter-selected {
   background-color: #f1770f;
 }

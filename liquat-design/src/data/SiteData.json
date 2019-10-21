@@ -1017,6 +1017,35 @@
                     ],
                     "tools": [],
                     "tags": []
+                },
+                {
+                    "fr_title": "Izidoor - Air France",
+                    "imageSrc": "air-france.png",
+                    "fr_shortDescription": "Conception d’un site pour un nouveau service Air France.",
+                    "fr_longDescription": "Izidoor est un service permettant d’être accompagné de chez soi jusqu’à la porte d’embarquement selon les besoins du client. Air France avait besoin d’un site pour permettre la réservation de ce nouveau service.",
+                    "customer": "Air France",
+                    "company": "Freelance",
+                    "id": "ux-design-air-france-izidoor",
+                    "opacity": 0.3,
+                    "tasks": [
+                        {
+                            "fr": "Réunions avec les décideurs du projet / les développeurs / le graphiste"
+                        },
+                        {
+                            "fr": "Création de maquettes Balsamiq"
+                        },
+                        {
+                            "fr": " Guerilla testing à l’aéroport pour recueillir les 1er avis de potentiels futurs utilisateurs du service"
+                        },
+                        {
+                            "fr": " Création de nouvelles maquettes suite aux retours terrain"
+                        },
+                        {
+                            "fr": "Suivi de l’évolution du projet et conseil"
+                        }
+                    ],
+                    "tools": [],
+                    "tags": []
                 }
             ]
         },
