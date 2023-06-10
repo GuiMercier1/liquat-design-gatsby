@@ -7,7 +7,7 @@
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
     "emailjs-com": "^2.3.2",
-    "gatsby": "^2.13.45",
+    "gatsby": "^4.25.7",
     "gatsby-image": "^2.2.7",
     "gatsby-plugin-google-analytics": "^2.1.17",
     "gatsby-plugin-jss": "^2.1.3",
